@@ -40,18 +40,49 @@ This means the six releases share one overworld code skeleton. Release-specific 
 - JP: `0x063C–0x0772`
 - EN/DE/FR/IT/ES: `0x0683–0x07B9`
 - 311 bytes / 151 instructions
-- `NewBattle`, `DoBikeSpeedup`, warp handling, through the instruction immediately before `CheckMapConnections`
+- `NewBattle`, `DoBikeSpeedup`, and warp handling through the instruction immediately before `CheckMapConnections`
 - Source: `home/overworld_stage2.asm`
+
+### Stage 3
+
+- JP: `0x0773–0x0881`
+- EN/DE/FR/IT/ES: `0x07BA–0x08C8`
+- 271 bytes / 125 instructions
+- Full `CheckMapConnections` implementation
+- Source: `home/overworld_stage3.asm`
+
+### Stage 4
+
+- JP: `0x0882–0x08D7`
+- EN/DE/FR/IT/ES: `0x08C9–0x091E`
+- 86 bytes / 41 instructions
+- `PlayMapChangeSound`, `CheckIfInOutsideMap`, and `ExtraWarpCheck`
+- Source: `home/overworld_stage4.asm`
+
+### Stage 5
+
+- JP: `0x08D8–0x09B4`
+- EN/DE/FR/IT/ES: `0x091F–0x09FB`
+- 221 bytes, including the 6-byte `BikeRidingTilesets` table
+- `MapEntryAfterBattle`, blackout/warp handling, player-sprite selection, bike-riding checks, and `LoadTilesetTilePatternData`
+- Source: `home/overworld_stage5.asm`
+
+### Current reconstructed span
+
+The continuously reconstructed overworld span now runs from:
+
+- JP: `0x0357–0x09B4` — 1,630 bytes
+- EN/DE/FR/IT/ES: `0x039E–0x09FB` — 1,630 bytes
 
 ### Next boundary
 
 Reconstruction continues at:
 
-- JP: `0x0773`
-- EN/DE/FR/IT/ES: `0x07BA`
+- JP: `0x09B5`
+- EN/DE/FR/IT/ES: `0x09FC`
 
-This is the start of `CheckMapConnections`.
+This is the start of `LoadTileBlockMap`.
 
 ## Verification
 
-`tools/verify_overworld_structure.py` verifies the known section hashes and the cross-release opcode invariant against user-supplied source ROMs. ROM binaries are not stored in this repository.
+`tools/verify_overworld_structure.py` verifies the known complete-overworld hashes and the cross-release opcode invariant against user-supplied source ROMs. ROM binaries are not stored in this repository.

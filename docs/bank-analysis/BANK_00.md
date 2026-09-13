@@ -1,6 +1,6 @@
 # Bank 00 Baseline and Reconstruction Status
 
-Bank `00` is the fixed `ROM0` region (`0x0000–0x3FFF`). This document records both the source baseline and current lossless reconstruction progress.
+Bank `00` is the fixed `ROM0` region (`0x0000–0x3FFF`). This document records both the source baseline and current reconstruction progress.
 
 ## Bank hashes
 
@@ -39,52 +39,96 @@ All six releases begin with `00 C3 50 01` at `$0100`: `nop` followed by a jump t
 - EN: MBC3+RAM+BATTERY (`0x13`), ROM size code `0x05`
 - DE/FR/IT/ES: MBC5+RAM+BATTERY (`0x1B`), ROM size code `0x05`
 
-## Reconstructed source now committed
+## Reconstructed source committed
 
-### `$0000–$0060` — reset/interrupt vectors
+### Reset, interrupt and startup area
 
-Implemented in `home/header.asm` with per-version vector targets. The common entry/header reservation at `$0100–$014F` is also represented there.
+- `$0000–$0060`: reset/interrupt vectors — `home/header.asm`
+- `$0061–$00FF`: localized high-home routines and exact JP inline representation — `home/high_home.asm`
+- `$0100–$014F`: cartridge entry/header reservation — `home/header.asm`
+- `$0150` onward: startup and joypad wrappers — `home/start.asm`
 
-### `$0061–$00FF` — high-home area
-
-For EN/DE/FR/IT/ES, the following routines are byte-identical and are now symbolic source in `home/high_home.asm`:
-
-- `DisableLCD`
-- `EnableLCD`
-- `ClearSprites`
-- `HideSprites`
-- `FarCopyData`
-- `CopyData`
-
-JP uses a different layout in this address range. Its exact bytes are preserved inline as a temporary lossless representation until semantics are classified; no `baserom`/`INCBIN` dependency is used.
-
-### `$0150` onward — startup/joypad
-
-Implemented in `home/start.asm`.
-
-- JP: direct Init jump followed by the bank-3 `Joypad` call wrapper.
-- EN/DE/FR/IT/ES: CGB-state setup, `ReadJoypad`, then the same bank-3 `Joypad` wrapper.
+The JP release stores `DisableLCD`, `EnableLCD`, `ClearSprites`, `HideSprites`, `FarCopyData`, and `CopyData` later in ROM0 rather than at the localized high-home addresses; those relocated routines are now symbolically identified in `home/pics.asm`.
 
 ### Map-header pointer table
 
-Implemented in `data/maps/map_header_pointers.asm` as 248 little-endian pointers per release:
+`data/maps/map_header_pointers.asm` contains 248 pointers per release:
 
 - JP: `$0167–$0356`
 - EN/DE/FR/IT/ES: `$01AE–$039D`
 
-The values are intentionally numeric at this stage. They will be replaced by symbolic map-header labels as their target banks are reconstructed.
+`tools/verify_map_header_pointers.py` verifies all six 496-byte tables.
 
-`tools/verify_map_header_pointers.py` verifies the committed table without a base ROM against source-derived SHA-256 fingerprints. All six targets currently pass (496 bytes each).
+### Overworld engine — complete source span
 
-## Next reconstruction boundary
+`home/overworld.asm` and `home/overworld_stage2.asm` through `home/overworld_stage14.asm` cover the complete verified overworld span:
 
-The next unconverted bytes begin immediately after the map-header pointer table:
+- JP: `$0357–$12EE`
+- EN/DE/FR/IT/ES: `$039E–$1335`
+- 3,992 bytes per release
+- 2,044 SM83 instructions per release
 
-- JP: `$0357`
-- EN/DE/FR/IT/ES: `$039E`
+See `docs/bank-analysis/OVERWORLD_STRUCTURE.md`.
 
-The first routine at that boundary is the overworld `HandleMidJump` far-jump wrapper; reconstruction continues from there through the remaining ROM0 engine routines.
+### Pokemon / party ROM0 routines
+
+`home/pokemon.asm` reconstructs `DrawHPBar` through `GetPartyMonName`.
+
+- JP: `$12EF–$1585` — 663 bytes / 348 instructions
+- EN/DE/IT/ES: `$1336–$15CC` — 663 bytes / 348 instructions
+- FR: `$1336–$15C9` — 660 bytes / 346 instructions
+
+The French release uses a shorter fainted-status rendering sequence; this is represented explicitly with a release conditional rather than hidden as raw bytes.
+
+### BCD number printer
+
+`home/print_bcd.asm` reconstructs `PrintBCDNumber` and `PrintBCDDigit`.
+
+- JP: `$1586–$15BE` — 57 bytes; the Japanese routine omits the localized currency-symbol path.
+- EN/DE/IT/ES: `$15CD–$1626` — 90 bytes
+- FR: `$15CA–$1623` — 90 bytes
+
+### Pokemon sprite processing
+
+`home/pics.asm` reconstructs sprite decompression-bank selection, sprite centering, sprite-buffer clearing and interlacing.
+
+- JP common sprite span: `$15BF–$16C6`
+- EN/DE/IT/ES: `$1627–$172E`
+- FR: `$1624–$172B`
+
+The shared sprite span is 264 bytes / 155 instructions with an identical opcode skeleton in all six releases. JP additionally contains its relocated LCD/sprite/copy helpers at `$16C7–$1723`.
+
+### Tileset collision data
+
+`data/tilesets/collision_tile_ids.asm` contains the complete 200-byte collision list block. It is byte-identical in all six releases with SHA-1 `af69e30d0ddd85bf0f2be3fe6182073a5acc8099`.
+
+- JP: `$1724–$17EB`
+- EN/DE/IT/ES: `$172F–$17F6`
+- FR: `$172C–$17F3`
+
+### Far-copy / VRAM / screen helpers
+
+`home/copy2.asm` reconstructs `FarCopyData2`, `FarCopyData3`, `FarCopyDataDouble`, `CopyVideoData`, `CopyVideoDataDouble`, `ClearScreenArea`, `CopyScreenTileBufferToVRAM`, and `ClearScreen`.
+
+All six releases share a 299-byte / 167-instruction opcode skeleton.
+
+- JP: `$17EC–$1916`
+- EN/DE/IT/ES: `$17F7–$1921`
+- FR: `$17F4–$191E`
+
+## Current next boundary
+
+Bank 00 reconstruction now continues at `TextBoxBorder`:
+
+- JP: `$1917`
+- EN/DE/IT: `$1922`
+- FR: `$191F`
+- ES: `$1922`
+
+The following text-engine span has genuine localization-driven control-flow differences, so it will be reconstructed with explicit release variants rather than forced into one false common opcode skeleton.
 
 ## Final Bank 00 acceptance criterion
 
-When all of `$0000–$3FFF` is represented as source, each version must assemble/link/fix to the Bank 00 SHA-1 listed above, and later the complete ROM must match its whole-ROM SHA-1/SHA-256 manifest.
+Bank 00 is **not complete yet**. Work continues in address order until `$3FFF`.
+
+When all of `$0000–$3FFF` is represented as source/data, each release must assemble/link/fix to the Bank 00 SHA-1 listed above. The complete ROM will then be verified against the whole-ROM SHA-1/SHA-256 manifest.

@@ -13,16 +13,16 @@ Bank `00` is fixed ROM0 (`0x0000–0x3FFF`). Work proceeds strictly in address o
 
 ## Continuous source coverage
 
-Current lossless source/data coverage is continuous from `0x0000` through the end of the ROM0 `DisplayTextID` / text-script span:
+Current lossless source/data coverage is continuous from `0x0000` through the end of the ROM0 inventory helper block:
 
 | Release | Covered through | Next byte / routine |
 |---|---:|---|
-| JP | `0x2B29` | `0x2B2A` — `DisplayStartMenu` |
-| EN | `0x2ACC` | `0x2ACD` — `DisplayStartMenu` |
-| DE | `0x2AE6` | `0x2AE7` — `DisplayStartMenu` |
-| FR | `0x2AE2` | `0x2AE3` — `DisplayStartMenu` |
-| IT | `0x2AE6` | `0x2AE7` — `DisplayStartMenu` |
-| ES | `0x2AE5` | `0x2AE6` — `DisplayStartMenu` |
+| JP | `0x2C42` | `0x2C43` — `DisplayListMenuID` |
+| EN | `0x2BE5` | `0x2BE6` — `DisplayListMenuID` |
+| DE | `0x2BFF` | `0x2C00` — `DisplayListMenuID` |
+| FR | `0x2BFB` | `0x2BFC` — `DisplayListMenuID` |
+| IT | `0x2BFF` | `0x2C00` — `DisplayListMenuID` |
+| ES | `0x2BFE` | `0x2BFF` — `DisplayListMenuID` |
 
 This is lossless source coverage, not a claim that every temporary numeric or exact-byte representation has already been semantically renamed. Those representations are progressively promoted to labels/macros while preserving layout and bytes.
 
@@ -52,9 +52,14 @@ This is lossless source coverage, not a claim that every temporary numeric or ex
 - `home/uncompress.asm` — complete 937-byte sprite decompression engine with code/data separation
 - `home/reset_player_sprite.asm` — 37-byte player sprite-state reset block
 - `home/fade_audio.asm` — 85-byte audio fade state machine
-- `home/text_script.asm` — complete `DisplayTextID` text-script span for all six releases; currently exact per-release source pending deeper semantic promotion
+- `home/text_script.asm` — complete `DisplayTextID` text-script span for all six releases; exact per-release source pending deeper semantic promotion
+- `home/start_menu.asm` — 178-byte start-menu dispatcher; opcode skeleton identical across all six releases, with release-specific operands isolated symbolically
+- `home/count_set_bits.asm` — 23-byte `CountSetBits`; only the destination WRAM address differs by release
+- `home/inventory.asm` — 80-byte money/inventory wrapper block; common control-flow reconstructed symbolically with release-specific targets isolated
 
-## Text-script span fingerprints
+## Newly verified spans
+
+### Text script
 
 | Release | Range | Length | SHA-1 |
 |---|---:|---:|---|
@@ -65,7 +70,9 @@ This is lossless source coverage, not a claim that every temporary numeric or ex
 | IT | `0x2920–0x2AE6` | 455 | `c7c6c8e00fabb3f3c678d331aded1f156382c416` |
 | ES | `0x291F–0x2AE5` | 455 | `1d37c1dccb3d81c2ae49aa3b11dadb48c8aff1a8` |
 
-All six spans pass source-ROM SHA-1 verification. The exact-byte representation is intentional at this stage: it establishes a verified lossless boundary before the routines and localized data are promoted into symbolic RGBDS source.
+### Start menu / CountSetBits / inventory
+
+The start-menu span is exactly 178 bytes in every release and has an identical SM83 opcode skeleton. `CountSetBits` is 23 bytes in every release. The inventory block is exactly 80 bytes in every release. All release-specific ROM/WRAM operands are isolated in the corresponding source files and all three spans pass source-ROM SHA-1 verification in every release.
 
 ## Important cross-release results
 
@@ -81,20 +88,21 @@ The 148-byte mart inventory block is byte-identical across all six releases. `ov
 - `tools/verify_vcopy_init_vblank.py`
 - `tools/verify_bank00_phase2.py`
 - `tools/verify_text_script.py`
+- `tools/verify_bank00_phase3.py`
 
 These verify known source-ROM offsets, lengths, and fingerprints without storing a ROM in the repository.
 
 ## Current next boundary
 
-Continue from `DisplayStartMenu` / the ROM0 start-menu block:
+Continue from `DisplayListMenuID` / the ROM0 list-menu block:
 
-- JP: `0x2B2A`
-- EN: `0x2ACD`
-- DE/IT: `0x2AE7`
-- FR: `0x2AE3`
-- ES: `0x2AE6`
+- JP: `0x2C43`
+- EN: `0x2BE6`
+- DE/IT: `0x2C00`
+- FR: `0x2BFC`
+- ES: `0x2BFF`
 
-After the start menu come the remaining ROM0 helper modules. Work continues in address order until `0x3FFF` is fully represented and the complete Bank 00 output matches the SHA-1 baseline above.
+Work continues in address order until `0x3FFF` is fully represented and the complete Bank 00 output matches the SHA-1 baseline above.
 
 ## Final acceptance
 

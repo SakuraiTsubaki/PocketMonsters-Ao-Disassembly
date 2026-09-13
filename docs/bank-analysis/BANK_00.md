@@ -1,6 +1,6 @@
 # Bank 00 Baseline and Reconstruction Status
 
-Bank `00` is the fixed `ROM0` region (`0x0000–0x3FFF`). This document records both the source baseline and current reconstruction progress.
+Bank `00` is the fixed `ROM0` region (`0x0000–0x3FFF`). Work proceeds strictly in address order and preserves every byte as source/data without a `baserom`/`INCBIN` dependency.
 
 ## Bank hashes
 
@@ -11,27 +11,7 @@ Bank `00` is the fixed `ROM0` region (`0x0000–0x3FFF`). This document records 
 - IT: SHA-1 `35646dd4fa4ca99c3e4f0ea567fcbe4d19d7390a`
 - ES: SHA-1 `3fd427297d15e9f0b13a2e83fb233d8946623bf4`
 
-## Pairwise byte similarity
-
-| Pair | Equal bytes | Different bytes | Similarity |
-|---|---:|---:|---:|
-| JP vs EN | 508 | 15,876 | 3.10% |
-| JP vs DE | 514 | 15,870 | 3.14% |
-| JP vs FR | 462 | 15,922 | 2.82% |
-| JP vs IT | 514 | 15,870 | 3.14% |
-| JP vs ES | 559 | 15,825 | 3.41% |
-| EN vs DE | 10,246 | 6,138 | 62.54% |
-| EN vs FR | 5,204 | 11,180 | 31.76% |
-| EN vs IT | 10,223 | 6,161 | 62.40% |
-| EN vs ES | 6,283 | 10,101 | 38.35% |
-| DE vs FR | 5,605 | 10,779 | 34.21% |
-| DE vs IT | 12,007 | 4,377 | 73.28% |
-| DE vs ES | 6,765 | 9,619 | 41.29% |
-| FR vs IT | 5,607 | 10,777 | 34.22% |
-| FR vs ES | 5,531 | 10,853 | 33.76% |
-| IT vs ES | 6,728 | 9,656 | 41.06% |
-
-## Header / entry observations
+## Cartridge / release observations
 
 All six releases begin with `00 C3 50 01` at `$0100`: `nop` followed by a jump to `$0150`.
 
@@ -44,11 +24,11 @@ All six releases begin with `00 C3 50 01` at `$0100`: `nop` followed by a jump t
 ### Reset, interrupt and startup area
 
 - `$0000–$0060`: reset/interrupt vectors — `home/header.asm`
-- `$0061–$00FF`: localized high-home routines and exact JP inline representation — `home/high_home.asm`
+- `$0061–$00FF`: localized high-home routines and exact JP representation — `home/high_home.asm`
 - `$0100–$014F`: cartridge entry/header reservation — `home/header.asm`
 - `$0150` onward: startup and joypad wrappers — `home/start.asm`
 
-The JP release stores `DisableLCD`, `EnableLCD`, `ClearSprites`, `HideSprites`, `FarCopyData`, and `CopyData` later in ROM0 rather than at the localized high-home addresses; those relocated routines are now symbolically identified in `home/pics.asm`.
+The JP release stores `DisableLCD`, `EnableLCD`, `ClearSprites`, `HideSprites`, `FarCopyData`, and `CopyData` later in ROM0; those relocated routines are identified in `home/pics.asm`.
 
 ### Map-header pointer table
 
@@ -59,16 +39,16 @@ The JP release stores `DisableLCD`, `EnableLCD`, `ClearSprites`, `HideSprites`, 
 
 `tools/verify_map_header_pointers.py` verifies all six 496-byte tables.
 
-### Overworld engine — complete source span
+### Overworld engine — complete span
 
-`home/overworld.asm` and `home/overworld_stage2.asm` through `home/overworld_stage14.asm` cover the complete verified overworld span:
+`home/overworld.asm` and `home/overworld_stage2.asm` through `home/overworld_stage14.asm` cover:
 
 - JP: `$0357–$12EE`
 - EN/DE/FR/IT/ES: `$039E–$1335`
 - 3,992 bytes per release
 - 2,044 SM83 instructions per release
 
-See `docs/bank-analysis/OVERWORLD_STRUCTURE.md`.
+The opcode skeleton is identical across all six releases; version differences in this span are isolated to operands/data. See `docs/bank-analysis/OVERWORLD_STRUCTURE.md`.
 
 ### Pokemon / party ROM0 routines
 
@@ -78,29 +58,29 @@ See `docs/bank-analysis/OVERWORLD_STRUCTURE.md`.
 - EN/DE/IT/ES: `$1336–$15CC` — 663 bytes / 348 instructions
 - FR: `$1336–$15C9` — 660 bytes / 346 instructions
 
-The French release uses a shorter fainted-status rendering sequence; this is represented explicitly with a release conditional rather than hidden as raw bytes.
+The French release's shorter fainted-status sequence is represented explicitly rather than being forced into the common skeleton.
 
 ### BCD number printer
 
 `home/print_bcd.asm` reconstructs `PrintBCDNumber` and `PrintBCDDigit`.
 
-- JP: `$1586–$15BE` — 57 bytes; the Japanese routine omits the localized currency-symbol path.
+- JP: `$1586–$15BE` — 57 bytes
 - EN/DE/IT/ES: `$15CD–$1626` — 90 bytes
 - FR: `$15CA–$1623` — 90 bytes
 
 ### Pokemon sprite processing
 
-`home/pics.asm` reconstructs sprite decompression-bank selection, sprite centering, sprite-buffer clearing and interlacing.
+`home/pics.asm` reconstructs sprite decompression-bank selection, centering, sprite-buffer clearing and interlacing.
 
 - JP common sprite span: `$15BF–$16C6`
 - EN/DE/IT/ES: `$1627–$172E`
 - FR: `$1624–$172B`
 
-The shared sprite span is 264 bytes / 155 instructions with an identical opcode skeleton in all six releases. JP additionally contains its relocated LCD/sprite/copy helpers at `$16C7–$1723`.
+JP additionally contains relocated LCD/sprite/copy helpers at `$16C7–$1723`.
 
 ### Tileset collision data
 
-`data/tilesets/collision_tile_ids.asm` contains the complete 200-byte collision list block. It is byte-identical in all six releases with SHA-1 `af69e30d0ddd85bf0f2be3fe6182073a5acc8099`.
+`data/tilesets/collision_tile_ids.asm` contains the complete 200-byte collision-list block. It is byte-identical in all six releases with SHA-1 `af69e30d0ddd85bf0f2be3fe6182073a5acc8099`.
 
 - JP: `$1724–$17EB`
 - EN/DE/IT/ES: `$172F–$17F6`
@@ -116,16 +96,42 @@ All six releases share a 299-byte / 167-instruction opcode skeleton.
 - EN/DE/IT/ES: `$17F7–$1921`
 - FR: `$17F4–$191E`
 
+### ROM0 text engine — complete lossless span
+
+The text-engine range is now represented by `home/text_stage1.asm` and `home/text_stage2.asm` and connected from `home.asm`.
+
+`TextBoxBorder` is already symbolic source. The localization-heavy `PlaceString`/command-character area and `TextCommandProcessor` command-handler area are currently preserved as exact per-release `db` source because JP and the European localizations have genuine code/data-length differences. These blocks will be progressively replaced by symbolic routines without changing layout or bytes.
+
+Full text-engine spans and source-ROM fingerprints:
+
+| Release | Range | Length | SHA-1 |
+|---|---:|---:|---|
+| JP | `$1917–$1CC2` | 940 | `e1c6dd87e81236a52392ec2c48ad0e5b6c617303` |
+| EN | `$1922–$1CDC` | 955 | `7c2ff36a8b57061090ebe15faee47ecfb2fdf692` |
+| DE | `$1922–$1CDC` | 955 | `deb20a492b78799d7ceb4874339d4c5d973a5294` |
+| FR | `$191F–$1CD8` | 954 | `8169c209847a405c7d8f85b9823864dd9e1c37a6` |
+| IT | `$1922–$1CDC` | 955 | `3e589186768f6558f67efbfad8eaa8cf69aff835` |
+| ES | `$1922–$1CDB` | 954 | `82c610fcd6a85c0ef9c5b161eded916165e56fc0` |
+
+`tools/verify_text_engine.py` verifies these spans against user-supplied source ROMs.
+
 ## Current next boundary
 
-Bank 00 reconstruction now continues at `TextBoxBorder`:
+Bank 00 reconstruction now continues at `GetRowColAddressBgMap`, the start of the ROM0 `vcopy` block:
 
-- JP: `$1917`
-- EN/DE/IT: `$1922`
-- FR: `$191F`
-- ES: `$1922`
+- JP: `$1CC3`
+- EN/DE/IT: `$1CDD`
+- FR: `$1CD9`
+- ES: `$1CDC`
 
-The following text-engine span has genuine localization-driven control-flow differences, so it will be reconstructed with explicit release variants rather than forced into one false common opcode skeleton.
+The `vcopy` block is exactly 620 bytes in every release and ends immediately before `SoftReset` / `Init`:
+
+- JP next boundary: `$1F2F`
+- EN/DE/IT next boundary: `$1F49`
+- FR next boundary: `$1F45`
+- ES next boundary: `$1F48`
+
+This block mixes executable VRAM-copy/redraw helpers with small inline data tables, so code and data are being separated rather than linearly mis-disassembled.
 
 ## Final Bank 00 acceptance criterion
 

@@ -13,16 +13,16 @@ Bank `00` is fixed ROM0 (`0x0000–0x3FFF`). Work proceeds strictly in address o
 
 ## Continuous source coverage
 
-Current lossless source/data coverage is continuous from `0x0000` through the end of `FadeOutAudio`:
+Current lossless source/data coverage is continuous from `0x0000` through the end of the ROM0 `DisplayTextID` / text-script span:
 
 | Release | Covered through | Next byte / routine |
 |---|---:|---|
-| JP | `0x293D` | `0x293E` — `DisplayTextID` |
-| EN | `0x291F` | `0x2920` — `DisplayTextID` |
-| DE | `0x291F` | `0x2920` — `DisplayTextID` |
-| FR | `0x291B` | `0x291C` — `DisplayTextID` |
-| IT | `0x291F` | `0x2920` — `DisplayTextID` |
-| ES | `0x291E` | `0x291F` — `DisplayTextID` |
+| JP | `0x2B29` | `0x2B2A` — `DisplayStartMenu` |
+| EN | `0x2ACC` | `0x2ACD` — `DisplayStartMenu` |
+| DE | `0x2AE6` | `0x2AE7` — `DisplayStartMenu` |
+| FR | `0x2AE2` | `0x2AE3` — `DisplayStartMenu` |
+| IT | `0x2AE6` | `0x2AE7` — `DisplayStartMenu` |
+| ES | `0x2AE5` | `0x2AE6` — `DisplayStartMenu` |
 
 This is lossless source coverage, not a claim that every temporary numeric or exact-byte representation has already been semantically renamed. Those representations are progressively promoted to labels/macros while preserving layout and bytes.
 
@@ -52,6 +52,20 @@ This is lossless source coverage, not a claim that every temporary numeric or ex
 - `home/uncompress.asm` — complete 937-byte sprite decompression engine with code/data separation
 - `home/reset_player_sprite.asm` — 37-byte player sprite-state reset block
 - `home/fade_audio.asm` — 85-byte audio fade state machine
+- `home/text_script.asm` — complete `DisplayTextID` text-script span for all six releases; currently exact per-release source pending deeper semantic promotion
+
+## Text-script span fingerprints
+
+| Release | Range | Length | SHA-1 |
+|---|---:|---:|---|
+| JP | `0x293E–0x2B29` | 492 | `d02dda498150c81489ce528f44bf3fd121808f2f` |
+| EN | `0x2920–0x2ACC` | 429 | `59556a52a33a004e8062049d6c375fd0c5049b36` |
+| DE | `0x2920–0x2AE6` | 455 | `c8ad3d558714cc64f7d73031a6a1c3531899c163` |
+| FR | `0x291C–0x2AE2` | 455 | `646b6efd9307d5807facef2e7bfb9e04d86e1823` |
+| IT | `0x2920–0x2AE6` | 455 | `c7c6c8e00fabb3f3c678d331aded1f156382c416` |
+| ES | `0x291F–0x2AE5` | 455 | `1d37c1dccb3d81c2ae49aa3b11dadb48c8aff1a8` |
+
+All six spans pass source-ROM SHA-1 verification. The exact-byte representation is intentional at this stage: it establishes a verified lossless boundary before the routines and localized data are promoted into symbolic RGBDS source.
 
 ## Important cross-release results
 
@@ -66,19 +80,21 @@ The 148-byte mart inventory block is byte-identical across all six releases. `ov
 - `tools/verify_text_engine.py`
 - `tools/verify_vcopy_init_vblank.py`
 - `tools/verify_bank00_phase2.py`
+- `tools/verify_text_script.py`
 
 These verify known source-ROM offsets, lengths, and fingerprints without storing a ROM in the repository.
 
 ## Current next boundary
 
-Continue from `DisplayTextID` / the ROM0 text-script engine:
+Continue from `DisplayStartMenu` / the ROM0 start-menu block:
 
-- JP: `0x293E`
-- EN/DE/IT: `0x2920`
-- FR: `0x291C`
-- ES: `0x291F`
+- JP: `0x2B2A`
+- EN: `0x2ACD`
+- DE/IT: `0x2AE7`
+- FR: `0x2AE3`
+- ES: `0x2AE6`
 
-After this comes the start-menu and remaining ROM0 helper modules. Work continues until `0x3FFF` is fully represented and the complete Bank 00 output matches the SHA-1 baseline above.
+After the start menu come the remaining ROM0 helper modules. Work continues in address order until `0x3FFF` is fully represented and the complete Bank 00 output matches the SHA-1 baseline above.
 
 ## Final acceptance
 

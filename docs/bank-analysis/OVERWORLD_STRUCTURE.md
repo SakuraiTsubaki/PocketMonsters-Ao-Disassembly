@@ -1,8 +1,8 @@
 # ROM0 Overworld Cross-Release Structure
 
-The ROM0 overworld engine was compared instruction-by-instruction across all six project source ROMs.
+The ROM0 overworld engine was compared instruction-by-instruction across all six project source ROMs and reconstructed as a continuous source span.
 
-## Verified range
+## Verified complete range
 
 | Release | Start | End inclusive | Length | SHA-1 |
 |---|---:|---:|---:|---|
@@ -13,76 +13,50 @@ The ROM0 overworld engine was compared instruction-by-instruction across all six
 | IT | `0x039E` | `0x1335` | 3,992 | `215f146871ce861338d8a2dbca0576cdee2dd30a` |
 | ES | `0x039E` | `0x1335` | 3,992 | `e47fadb0496ca8aa4cba44a9ad2e11097d12f4a0` |
 
-The next routine after this range is `DrawHPBar`, beginning at `0x12EF` in JP and `0x1336` in the localized releases.
+The next routine is `DrawHPBar`, beginning at `0x12EF` in JP and `0x1336` in the localized releases.
 
 ## Structural result
 
 - 2,044 decoded SM83 instructions in every release.
 - Opcode byte is identical at every corresponding instruction boundary across JP/EN/DE/FR/IT/ES.
-- 567 instructions contain version differences.
-- Every one of those 567 differences occurs in a three-byte instruction and is confined to its 16-bit operand.
+- 567 instructions contain release differences.
+- Every one of those differences is confined to a 16-bit operand in a three-byte instruction.
 - No opcode divergence was found in the verified range.
+- `BikeRidingTilesets` is represented as data, not code.
+- The 44-byte land/water tile-pair collision tables are byte-identical in all six releases and are represented as data, not disassembled instructions.
 
-This means the six releases share one overworld code skeleton. Release-specific addresses can be isolated as operands while the executable source remains common.
+This establishes one common overworld code skeleton with release-specific addresses isolated as transitional operands.
 
-## Source reconstruction progress
+## Reconstruction stages
 
-### Stage 1
+| Stage | JP range | Localized range | Main contents |
+|---|---|---|---|
+| 1 | `0357–063B` | `039E–0682` | HandleMidJump, EnterMap, main overworld loop |
+| 2 | `063C–0772` | `0683–07B9` | NewBattle, bike speedup, warp handling |
+| 3 | `0773–0881` | `07BA–08C8` | CheckMapConnections |
+| 4 | `0882–08D7` | `08C9–091E` | map-change sound, outside-map and extra-warp checks |
+| 5 | `08D8–09B4` | `091F–09FB` | blackout/warp handling, player graphics, bike checks, tileset graphics |
+| 6 | `09B5–0B89` | `09FC–0BD0` | LoadTileBlockMap, connection-strip copies, sprite/sign detection |
+| 7 | `0B8A–0C62` | `0BD1–0CA9` | land collision, tile passability, tile-pair collision data |
+| 8 | `0C63–0CDF` | `0CAA–0D26` | LoadCurrentMapView |
+| 9 | `0CE0–0E1D` | `0D27–0E64` | AdvancePlayerSprite |
+| 10 | `0E1E–0F05` | `0E65–0F4C` | map-pointer helpers, redraw scheduling, DrawTileBlock |
+| 11 | `0F06–0F6F` | `0F4D–0FB6` | JoypadOverworld |
+| 12 | `0F70–1034` | `0FB7–107B` | water collision, RunMapScript, player sprite graphics |
+| 13 | `1035–11F9` | `107C–1240` | LoadMapHeader and map connection/header/object loading |
+| 14 | `11FA–12EE` | `1241–1335` | LoadMapData, SwitchToMapRomBank, input helpers, destination warp position |
 
-- JP: `0x0357–0x063B`
-- EN/DE/FR/IT/ES: `0x039E–0x0682`
-- 741 bytes / 310 instructions
-- `HandleMidJump` through the instruction immediately before `NewBattle`
-- Source: `home/overworld.asm`
+## Current status
 
-### Stage 2
+The entire verified overworld span is now continuously represented by source files included from `home.asm`:
 
-- JP: `0x063C–0x0772`
-- EN/DE/FR/IT/ES: `0x0683–0x07B9`
-- 311 bytes / 151 instructions
-- `NewBattle`, `DoBikeSpeedup`, and warp handling through the instruction immediately before `CheckMapConnections`
-- Source: `home/overworld_stage2.asm`
+- `home/overworld.asm`
+- `home/overworld_stage2.asm` through `home/overworld_stage14.asm`
 
-### Stage 3
+Total continuous reconstructed overworld size: **3,992 bytes per release**.
 
-- JP: `0x0773–0x0881`
-- EN/DE/FR/IT/ES: `0x07BA–0x08C8`
-- 271 bytes / 125 instructions
-- Full `CheckMapConnections` implementation
-- Source: `home/overworld_stage3.asm`
-
-### Stage 4
-
-- JP: `0x0882–0x08D7`
-- EN/DE/FR/IT/ES: `0x08C9–0x091E`
-- 86 bytes / 41 instructions
-- `PlayMapChangeSound`, `CheckIfInOutsideMap`, and `ExtraWarpCheck`
-- Source: `home/overworld_stage4.asm`
-
-### Stage 5
-
-- JP: `0x08D8–0x09B4`
-- EN/DE/FR/IT/ES: `0x091F–0x09FB`
-- 221 bytes, including the 6-byte `BikeRidingTilesets` table
-- `MapEntryAfterBattle`, blackout/warp handling, player-sprite selection, bike-riding checks, and `LoadTilesetTilePatternData`
-- Source: `home/overworld_stage5.asm`
-
-### Current reconstructed span
-
-The continuously reconstructed overworld span now runs from:
-
-- JP: `0x0357–0x09B4` — 1,630 bytes
-- EN/DE/FR/IT/ES: `0x039E–0x09FB` — 1,630 bytes
-
-### Next boundary
-
-Reconstruction continues at:
-
-- JP: `0x09B5`
-- EN/DE/FR/IT/ES: `0x09FC`
-
-This is the start of `LoadTileBlockMap`.
+This does **not** mean Bank 00 is complete. Bank 00 reconstruction continues immediately with `DrawHPBar` and the subsequent ROM0 routines/data until the fixed bank ends at `0x3FFF`.
 
 ## Verification
 
-`tools/verify_overworld_structure.py` verifies the known complete-overworld hashes and the cross-release opcode invariant against user-supplied source ROMs. ROM binaries are not stored in this repository.
+`tools/verify_overworld_structure.py` verifies the complete-overworld hashes and the cross-release opcode invariant against user-supplied source ROMs. ROM binaries are not stored in this repository.

@@ -1,6 +1,6 @@
-# Bank 00 Baseline Survey
+# Bank 00 Baseline and Reconstruction Status
 
-Bank `00` is the fixed `ROM0` region (`0x0000–0x3FFF`). This report establishes byte-level baselines before symbolic disassembly.
+Bank `00` is the fixed `ROM0` region (`0x0000–0x3FFF`). This document records both the source baseline and current lossless reconstruction progress.
 
 ## Bank hashes
 
@@ -31,24 +31,60 @@ Bank `00` is the fixed `ROM0` region (`0x0000–0x3FFF`). This report establishe
 | FR vs ES | 5,531 | 10,853 | 33.76% |
 | IT vs ES | 6,728 | 9,656 | 41.06% |
 
-## Longest all-version identical ranges
-
-- `0x0100–0x0146` (71 bytes)
-- `0x0000–0x0037` (56 bytes)
-
 ## Header / entry observations
 
-- JP: entry `00 c3 50 01`, cart type `0x03`, ROM size code `0x04`, version `0x00`
-- EN: entry `00 c3 50 01`, cart type `0x13`, ROM size code `0x05`, version `0x00`
-- DE: entry `00 c3 50 01`, cart type `0x1B`, ROM size code `0x05`, version `0x00`
-- FR: entry `00 c3 50 01`, cart type `0x1B`, ROM size code `0x05`, version `0x00`
-- IT: entry `00 c3 50 01`, cart type `0x1B`, ROM size code `0x05`, version `0x00`
-- ES: entry `00 c3 50 01`, cart type `0x1B`, ROM size code `0x05`, version `0x00`
+All six releases begin with `00 C3 50 01` at `$0100`: `nop` followed by a jump to `$0150`.
 
-## Next reconstruction work
+- JP: MBC1+RAM+BATTERY (`0x03`), ROM size code `0x04`
+- EN: MBC3+RAM+BATTERY (`0x13`), ROM size code `0x05`
+- DE/FR/IT/ES: MBC5+RAM+BATTERY (`0x1B`), ROM size code `0x05`
 
-1. Split reset/interrupt vectors and entry point into labeled `ROM0` source.
-2. Reconstruct the cartridge header as declarative source, with per-version controller/ROM-size differences.
-3. Identify executable routines and data tables in `0x0150–0x3FFF`.
-4. Replace anonymous byte regions with labels and macros while preserving exact layout.
-5. Verify each build target against the Bank 00 SHA-1 listed above.
+## Reconstructed source now committed
+
+### `$0000–$0060` — reset/interrupt vectors
+
+Implemented in `home/header.asm` with per-version vector targets. The common entry/header reservation at `$0100–$014F` is also represented there.
+
+### `$0061–$00FF` — high-home area
+
+For EN/DE/FR/IT/ES, the following routines are byte-identical and are now symbolic source in `home/high_home.asm`:
+
+- `DisableLCD`
+- `EnableLCD`
+- `ClearSprites`
+- `HideSprites`
+- `FarCopyData`
+- `CopyData`
+
+JP uses a different layout in this address range. Its exact bytes are preserved inline as a temporary lossless representation until semantics are classified; no `baserom`/`INCBIN` dependency is used.
+
+### `$0150` onward — startup/joypad
+
+Implemented in `home/start.asm`.
+
+- JP: direct Init jump followed by the bank-3 `Joypad` call wrapper.
+- EN/DE/FR/IT/ES: CGB-state setup, `ReadJoypad`, then the same bank-3 `Joypad` wrapper.
+
+### Map-header pointer table
+
+Implemented in `data/maps/map_header_pointers.asm` as 248 little-endian pointers per release:
+
+- JP: `$0167–$0356`
+- EN/DE/FR/IT/ES: `$01AE–$039D`
+
+The values are intentionally numeric at this stage. They will be replaced by symbolic map-header labels as their target banks are reconstructed.
+
+`tools/verify_map_header_pointers.py` verifies the committed table without a base ROM against source-derived SHA-256 fingerprints. All six targets currently pass (496 bytes each).
+
+## Next reconstruction boundary
+
+The next unconverted bytes begin immediately after the map-header pointer table:
+
+- JP: `$0357`
+- EN/DE/FR/IT/ES: `$039E`
+
+The first routine at that boundary is the overworld `HandleMidJump` far-jump wrapper; reconstruction continues from there through the remaining ROM0 engine routines.
+
+## Final Bank 00 acceptance criterion
+
+When all of `$0000–$3FFF` is represented as source, each version must assemble/link/fix to the Bank 00 SHA-1 listed above, and later the complete ROM must match its whole-ROM SHA-1/SHA-256 manifest.

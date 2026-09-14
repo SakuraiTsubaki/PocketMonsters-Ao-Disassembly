@@ -2,6 +2,20 @@
 
 Multi-region disassembly and source reconstruction of **Pocket Monsters Ao / Pokémon Blue** for Game Boy.
 
+## Research restart — 2026-09-14
+
+The current research environment has **no local retail ROM images available**. Work therefore proceeds from publicly accessible evidence: public disassemblies and source reconstructions, repository history, official material, technical documentation, maps, graphics, text, audio, release metadata, glitch/unused-data research, archives, and other attributable public sources.
+
+The governing scope is **Japanese releases as the historical origin point, followed by an exhaustive survey of all regional, language, revision, and official re-release variants**. Existing repository claims and earlier analysis are retained as evidence, but are revalidated rather than automatically trusted.
+
+Current restart ledgers:
+
+- [`docs/source-manifest/PUBLIC_SOURCE_CENSUS.md`](docs/source-manifest/PUBLIC_SOURCE_CENSUS.md) — public-source evidence registry and search frontier.
+- [`docs/source-manifest/PUBLIC_GITHUB_CRAWL_2026-09-14.md`](docs/source-manifest/PUBLIC_GITHUB_CRAWL_2026-09-14.md) — repository/branch/fork discovery and classification queue.
+- [`docs/source-manifest/VC_SOURCE_CENSUS.md`](docs/source-manifest/VC_SOURCE_CENSUS.md) — Japanese Blue 3DS Virtual Console patch-source census.
+
+Any older references to locally available reference ROMs, supplied source sets, direct local extraction, or byte comparisons record an earlier analysis state and **do not describe the currently available inputs**.
+
 The goal of this repository is to reconstruct the supported retail ROMs into editable disassembly-source form and eventually produce **byte-exact reproducible builds without requiring a local base ROM**.
 
 ## Supported release families

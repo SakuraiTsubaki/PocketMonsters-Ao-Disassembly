@@ -1,0 +1,73 @@
+{
+  "batch": "007",
+  "category": "NPC overworld graphics",
+  "storage": "native uncompressed 2bpp",
+  "deduplication": "one shared asset; all six releases map to it",
+  "assets": {
+    "beauty": {
+      "dimensions": "16x96",
+      "bytes": 384,
+      "bpp_sha1": "e68d934d812d6cc10fec3462891d1329e4e9d84e",
+      "locations": {
+        "jp": {"offset": "0x15680", "bank": "0x05", "address": "0x5680"},
+        "en": {"offset": "0x15680", "bank": "0x05", "address": "0x5680"},
+        "de": {"offset": "0x15680", "bank": "0x05", "address": "0x5680"},
+        "fr": {"offset": "0x15680", "bank": "0x05", "address": "0x5680"},
+        "it": {"offset": "0x15680", "bank": "0x05", "address": "0x5680"},
+        "es": {"offset": "0x15680", "bank": "0x05", "address": "0x5680"}
+      }
+    },
+    "gentleman": {
+      "dimensions": "16x96",
+      "bytes": 384,
+      "bpp_sha1": "a260beada70fb3d82cf8c2c4665ecee244033e4b",
+      "locations": {
+        "jp": {"offset": "0x15800", "bank": "0x05", "address": "0x5800"},
+        "en": {"offset": "0x15800", "bank": "0x05", "address": "0x5800"},
+        "de": {"offset": "0x15800", "bank": "0x05", "address": "0x5800"},
+        "fr": {"offset": "0x15800", "bank": "0x05", "address": "0x5800"},
+        "it": {"offset": "0x15800", "bank": "0x05", "address": "0x5800"},
+        "es": {"offset": "0x15800", "bank": "0x05", "address": "0x5800"}
+      }
+    },
+    "daisy": {
+      "dimensions": "16x96",
+      "bytes": 384,
+      "bpp_sha1": "5db178a7a35ef249b6715bbe048fbbb935161df2",
+      "locations": {
+        "jp": {"offset": "0x15980", "bank": "0x05", "address": "0x5980"},
+        "en": {"offset": "0x15980", "bank": "0x05", "address": "0x5980"},
+        "de": {"offset": "0x15980", "bank": "0x05", "address": "0x5980"},
+        "fr": {"offset": "0x15980", "bank": "0x05", "address": "0x5980"},
+        "it": {"offset": "0x15980", "bank": "0x05", "address": "0x5980"},
+        "es": {"offset": "0x15980", "bank": "0x05", "address": "0x5980"}
+      }
+    },
+    "biker": {
+      "dimensions": "16x96",
+      "bytes": 384,
+      "bpp_sha1": "8548e1c2a93ad8f2768262a44e57d31d5d8d4e0c",
+      "locations": {
+        "jp": {"offset": "0x15B00", "bank": "0x05", "address": "0x5B00"},
+        "en": {"offset": "0x15B00", "bank": "0x05", "address": "0x5B00"},
+        "de": {"offset": "0x15B00", "bank": "0x05", "address": "0x5B00"},
+        "fr": {"offset": "0x15B00", "bank": "0x05", "address": "0x5B00"},
+        "it": {"offset": "0x15B00", "bank": "0x05", "address": "0x5B00"},
+        "es": {"offset": "0x15B00", "bank": "0x05", "address": "0x5B00"}
+      }
+    },
+    "sailor": {
+      "dimensions": "16x96",
+      "bytes": 384,
+      "bpp_sha1": "003f677b9874d92a24d3cabd1cac4626c0482591",
+      "locations": {
+        "jp": {"offset": "0x15C80", "bank": "0x05", "address": "0x5C80"},
+        "en": {"offset": "0x15C80", "bank": "0x05", "address": "0x5C80"},
+        "de": {"offset": "0x15C80", "bank": "0x05", "address": "0x5C80"},
+        "fr": {"offset": "0x15C80", "bank": "0x05", "address": "0x5C80"},
+        "it": {"offset": "0x15C80", "bank": "0x05", "address": "0x5C80"},
+        "es": {"offset": "0x15C80", "bank": "0x05", "address": "0x5C80"}
+      }
+    }
+  }
+}

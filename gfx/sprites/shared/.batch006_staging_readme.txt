@@ -1,1 +1,0 @@
-Binary sprite assets for batch 006 are being committed individually; temporary staging files will be removed in the cleanup commit.

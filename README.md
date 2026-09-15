@@ -1,151 +1,66 @@
-# PocketMonsters-Ao-Disassembly
+# Pocket Monsters Ao — Disassembly
 
-![Status](https://img.shields.io/badge/status-in_progress-yellow)
+![Status](https://img.shields.io/badge/status-initial_setup-lightgrey)
 ![Project](https://img.shields.io/badge/project-disassembly-blue)
 ![ROMs](https://img.shields.io/badge/ROM_binaries-not_included-success)
 
-Multi-region disassembly and source reconstruction of **Pocket Monsters Ao / Pokémon Blue** for Game Boy.
+Disassembly and source-reconstruction project for **Pocket Monsters Ao / Pokémon Blue**.
 
-## Research restart — 2026-09-14
+## 🎯 Goals
 
-The current research environment has **no local retail ROM images available**. Work therefore proceeds from publicly accessible evidence: public disassemblies and source reconstructions, repository history, official material, technical documentation, maps, graphics, text, audio, release metadata, glitch/unused-data research, archives, and other attributable public sources.
+- Reconstruct game code and data into readable, editable assembly/source form.
+- Document ROM, bank, section, data, script, asset, and version differences.
+- Keep analysis, tooling, metadata, and documentation reproducible.
+- Build a clean foundation for long-term reverse-engineering work.
 
-The governing scope is **Japanese releases as the historical origin point, followed by an exhaustive survey of all regional, language, revision, and official re-release variants**. Existing repository claims and earlier analysis are retained as evidence, but are revalidated rather than automatically trusted.
+## 🚧 Status
 
-Current restart ledgers:
+This repository is in its **initial setup** stage. Source reconstruction and documentation will be added progressively.
 
-- [`docs/source-manifest/PUBLIC_SOURCE_CENSUS.md`](docs/source-manifest/PUBLIC_SOURCE_CENSUS.md) — public-source evidence registry and search frontier.
-- [`docs/source-manifest/PUBLIC_GITHUB_CRAWL_2026-09-14.md`](docs/source-manifest/PUBLIC_GITHUB_CRAWL_2026-09-14.md) — repository/branch/fork discovery and classification queue.
-- [`docs/source-manifest/VC_SOURCE_CENSUS.md`](docs/source-manifest/VC_SOURCE_CENSUS.md) — Japanese Blue 3DS Virtual Console patch-source census.
+## 🗂️ Planned scope
 
-Any older references to locally available reference ROMs, supplied source sets, direct local extraction, or byte comparisons record an earlier analysis state and **do not describe the currently available inputs**.
+- ROM, bank, section, and code analysis
+- Game data structures
+- Scripts and event data
+- Graphics and asset metadata
+- Audio and resource formats
+- Maps and world data
+- Tools, notes, manifests, and verification data
 
-The goal of this repository is to reconstruct the supported retail ROMs into editable disassembly-source form and eventually produce **byte-exact reproducible builds without requiring a local base ROM**.
+## 📌 Repository policy
 
-## Supported release families
+ROM images and redistributed ROM binaries are **not included**. The repository is intended for reconstructed source, extracted/recreated project data, tooling, analysis, and documentation.
 
-- **JP** — Pocket Monsters Ao
-- **EN** — Pokémon Blue Version (USA/Europe)
-- **DE** — Pokémon Blaue Edition
-- **FR** — Pokémon Version Bleue
-- **IT** — Pokémon Versione Blu
-- **ES** — Pokémon Edición Azul
+## 🧭 Roadmap
 
-Each release is treated as an independent reproducible build target while sharing common source wherever the original data is byte-identical or structurally equivalent.
-
-## Reconstruction scope
-
-The repository is intended to contain every non-ROM component required to reproduce the original games, including:
-
-- LR35902 assembly code
-- engine logic and home-bank routines
-- constants, macros, symbols, pointer maps, and bank layouts
-- Pokémon, move, item, trainer, encounter, and other game data
-- maps, blocksets, object data, connections, and event scripts
-- all game text and character-table definitions
-- Pokémon, trainer, overworld, UI, font, tileset, intro, and SGB graphics
-- music, sound effects, cries, wave data, audio headers, and audio engine data
-- extracted intermediate assets when a structure has not yet been fully understood
-- extraction, reconstruction, comparison, build, and verification tooling
-- reverse-engineering notes, manifests, cross-version comparisons, and regression results
-
-The target is not a raw ROM dump. Data should be progressively converted into meaningful, editable disassembly-source formats such as `.asm`, `.inc`, `.png`, `.2bpp`, `.tilemap`, structured tables, and other reproducible source assets.
-
-## Build philosophy
-
-A completed target should follow this model:
-
-```text
-git clone <repository>
-        ↓
-install the required build toolchain
-        ↓
-make <version>
-        ↓
-generated ROM
-        ↓
-hash and byte-for-byte comparison
-        ↓
-MATCH with the corresponding retail ROM
-```
-
-No `baserom.gb`, `baserom.gbc`, or other local ROM dependency is intended for the final reconstruction.
-
-During reverse engineering, unknown regions may temporarily remain as explicitly documented binary/source data so that reconstruction stays lossless. Those regions should be replaced with structured source as their purpose becomes understood.
-
-## Planned source layout
-
-```text
-constants/      symbolic constants and identifiers
-macros/         reusable RGBDS macros
-home/           fixed-bank and common routines
-engine/         game engine code
-data/           structured game data
-maps/           map layouts and map metadata
-scripts/        event and map scripts
-text/           game text
-gfx/            graphics and visual assets
-audio/          music, SFX, cries, wave data, audio engine
-versions/       release-specific source and build differences
-layout/         ROM bank/section/pointer layout documentation
-tools/          extraction, reconstruction, comparison, verification
-checksums/      expected hashes and reproducibility records
-docs/           reverse-engineering and project documentation
-tests/          regression and byte-exact verification tests
-```
-
-The exact structure may evolve as the ROMs are fully mapped.
-
-## Verification standard
-
-For every supported release, the long-term verification requirement is:
-
-1. Assemble and link entirely from repository source.
-2. Generate the target ROM without reading bytes from a retail ROM.
-3. Verify file size, cartridge header, ROM layout, and expected hashes.
-4. Perform a byte-for-byte comparison against the corresponding read-only reference ROM.
-5. Record any mismatch with bank, offset, expected byte, actual byte, and cause.
-
-A target is considered fully reconstructed only when the generated image matches its verified reference exactly.
-
-## ROM policy
-
-**ROM binaries are not stored in this repository.**
-
-This includes original retail ROMs, modified ROMs, reconstructed ROM outputs, and local base-ROM files. Build products such as `*.gb` and `*.gbc` are excluded from version control.
-
-Everything else produced for the project—source code, scripts, documentation, structured data, extracted/reconstructed assets, manifests, logs, tests, patches, and reproducibility metadata—is intended to be version-controlled where appropriate.
-
-## Current status
-
-The repository is in the initial reconstruction phase. The first milestones are:
-
-1. inventory and hash all six reference releases;
-2. map ROM headers, banks, sections, and cross-version differences;
-3. reconstruct Bank 00 and continue bank-by-bank;
-4. extract and restore graphics, text, maps, scripts, audio, and structured data into editable source form;
-5. replace temporary opaque regions as their formats are understood;
-6. reach independent byte-exact builds for every supported release.
-
-## Toolchain
-
-The project is intended to use an RGBDS-based Game Boy assembly workflow together with project-specific extraction and verification tools. Exact supported tool versions will be pinned once the initial build system is established.
-
-## Project principle
-
-**Preserve the retail ROMs as read-only references; reconstruct everything else as reproducible source.**
+- [ ] Establish baseline version/revision inventory
+- [ ] Map ROM, bank, section, and data structures
+- [ ] Begin source reconstruction
+- [ ] Document assets, scripts, and formats
+- [ ] Add build, matching, verification, and reproducibility workflow
 
 ## 📚 Documentation
 
 | Document | Purpose |
 | --- | --- |
-| [Documentation Hub](docs/README.md) | Central entry point for project documentation |
-| [Project Status](docs/PROJECT_STATUS.md) | Reconstruction and matching status |
-| [Version Coverage](docs/VERSIONS.md) | Supported releases, revisions, sizes, and hashes |
-| [Disassembly Standards](docs/DISASSEMBLY_STANDARDS.md) | Source reconstruction and provenance standards |
-| [Project Standards](docs/PROJECT_STANDARDS.md) | Naming, assets, manifests, provenance, and repository-wide conventions |
-| [Build and Matching](docs/BUILD_AND_MATCHING.md) | Reproducible build and exact-match workflow |
-| [Verification](docs/VERIFICATION.md) | Evidence levels and matching criteria |
-| [Asset Workflow](docs/ASSET_WORKFLOW.md) | Graphics, sprites, deduplication, manifests, and review batches |
-| [Manifest Guide](manifests/README.md) | Manifest conventions and reusable asset-manifest example |
-| [Contributing](CONTRIBUTING.md) | Contribution and pull-request guidance |
+| [Project status](docs/PROJECT_STATUS.md) | Current stage, coverage, validation level, and next milestones |
+| [Roadmap](docs/ROADMAP.md) | Recommended disassembly phases and long-term progression |
+| [Version coverage](docs/VERSIONS.md) | Regions, languages, revisions, releases, builds, and hashes |
+| [Research guide](docs/RESEARCH_GUIDE.md) | Evidence, confidence, and research-recording workflow |
+| [Verification guide](docs/VERIFICATION.md) | Standards for Observed, Reproduced, and Matched results |
+| [Repository structure](docs/REPOSITORY_STRUCTURE.md) | Intended long-term source, data, asset, tooling, and manifest layout |
+| [Documentation hub](docs/README.md) | Entry point for format, code, script, asset, version, and verification notes |
+
+## 🧱 Repository structure
+
+As real project material is reconstructed, the repository may grow into areas such as `asm/`, `data/`, `assets/`, `tools/`, `tests/`, and `manifests/`. Empty directory trees are not created only for appearance, and platform-specific structure should follow verified target architecture rather than another generation's layout.
+
+See [Repository Structure](docs/REPOSITORY_STRUCTURE.md) for the full organization policy.
+
+## 🔬 Research and verification
+
+Research findings should identify the relevant target version or revision and clearly separate hypotheses from observed, reproduced, or matched results. Use the repository's Research and Verification issue templates when tracking substantial findings.
+
+## 🤝 Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution rules, evidence expectations, commit guidance, and pull-request requirements.

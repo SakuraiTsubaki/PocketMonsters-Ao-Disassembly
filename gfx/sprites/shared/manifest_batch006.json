@@ -1,0 +1,73 @@
+{
+  "batch": "006",
+  "category": "NPC overworld graphics",
+  "storage": "native uncompressed 2bpp",
+  "deduplication": "one shared asset; all six releases map to it",
+  "assets": {
+    "middle_aged_man": {
+      "dimensions": "16x96",
+      "bytes": 384,
+      "bpp_sha1": "b4b80a88e00ce117777f8f20ce81c50b3fa42b33",
+      "locations": {
+        "jp": {"offset": "0x14F00", "bank": "0x05", "address": "0x4F00"},
+        "en": {"offset": "0x14F00", "bank": "0x05", "address": "0x4F00"},
+        "de": {"offset": "0x14F00", "bank": "0x05", "address": "0x4F00"},
+        "fr": {"offset": "0x14F00", "bank": "0x05", "address": "0x4F00"},
+        "it": {"offset": "0x14F00", "bank": "0x05", "address": "0x4F00"},
+        "es": {"offset": "0x14F00", "bank": "0x05", "address": "0x4F00"}
+      }
+    },
+    "gambler": {
+      "dimensions": "16x96",
+      "bytes": 384,
+      "bpp_sha1": "4f3598495adee416c653bd00f63150b537a4919e",
+      "locations": {
+        "jp": {"offset": "0x15080", "bank": "0x05", "address": "0x5080"},
+        "en": {"offset": "0x15080", "bank": "0x05", "address": "0x5080"},
+        "de": {"offset": "0x15080", "bank": "0x05", "address": "0x5080"},
+        "fr": {"offset": "0x15080", "bank": "0x05", "address": "0x5080"},
+        "it": {"offset": "0x15080", "bank": "0x05", "address": "0x5080"},
+        "es": {"offset": "0x15080", "bank": "0x05", "address": "0x5080"}
+      }
+    },
+    "super_nerd": {
+      "dimensions": "16x96",
+      "bytes": 384,
+      "bpp_sha1": "c94ee3f3372cd23296b1170f84a8017e616dc685",
+      "locations": {
+        "jp": {"offset": "0x15200", "bank": "0x05", "address": "0x5200"},
+        "en": {"offset": "0x15200", "bank": "0x05", "address": "0x5200"},
+        "de": {"offset": "0x15200", "bank": "0x05", "address": "0x5200"},
+        "fr": {"offset": "0x15200", "bank": "0x05", "address": "0x5200"},
+        "it": {"offset": "0x15200", "bank": "0x05", "address": "0x5200"},
+        "es": {"offset": "0x15200", "bank": "0x05", "address": "0x5200"}
+      }
+    },
+    "girl": {
+      "dimensions": "16x96",
+      "bytes": 384,
+      "bpp_sha1": "2ad7e166678774fd2b28c383b3f28828de0709d8",
+      "locations": {
+        "jp": {"offset": "0x15380", "bank": "0x05", "address": "0x5380"},
+        "en": {"offset": "0x15380", "bank": "0x05", "address": "0x5380"},
+        "de": {"offset": "0x15380", "bank": "0x05", "address": "0x5380"},
+        "fr": {"offset": "0x15380", "bank": "0x05", "address": "0x5380"},
+        "it": {"offset": "0x15380", "bank": "0x05", "address": "0x5380"},
+        "es": {"offset": "0x15380", "bank": "0x05", "address": "0x5380"}
+      }
+    },
+    "hiker": {
+      "dimensions": "16x96",
+      "bytes": 384,
+      "bpp_sha1": "171d0a5b76f5be8189cf75b05a68b76418279d94",
+      "locations": {
+        "jp": {"offset": "0x15500", "bank": "0x05", "address": "0x5500"},
+        "en": {"offset": "0x15500", "bank": "0x05", "address": "0x5500"},
+        "de": {"offset": "0x15500", "bank": "0x05", "address": "0x5500"},
+        "fr": {"offset": "0x15500", "bank": "0x05", "address": "0x5500"},
+        "it": {"offset": "0x15500", "bank": "0x05", "address": "0x5500"},
+        "es": {"offset": "0x15500", "bank": "0x05", "address": "0x5500"}
+      }
+    }
+  }
+}

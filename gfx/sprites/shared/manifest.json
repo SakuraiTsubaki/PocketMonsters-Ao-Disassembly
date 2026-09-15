@@ -1,0 +1,34 @@
+{
+  "batch": "003",
+  "category": "player overworld graphics",
+  "storage": "native uncompressed 2bpp",
+  "deduplication": "one shared asset; all six releases map to it",
+  "assets": {
+    "red_bike": {
+      "dimensions": "16x96",
+      "bytes": 384,
+      "bpp_sha1": "87f8b80a825846914fff7d2d6545c52494c21ce2",
+      "locations": {
+        "jp": {"offset": "0x14000", "bank": "0x05", "address": "0x4000"},
+        "en": {"offset": "0x14000", "bank": "0x05", "address": "0x4000"},
+        "de": {"offset": "0x14000", "bank": "0x05", "address": "0x4000"},
+        "fr": {"offset": "0x14000", "bank": "0x05", "address": "0x4000"},
+        "it": {"offset": "0x14000", "bank": "0x05", "address": "0x4000"},
+        "es": {"offset": "0x14000", "bank": "0x05", "address": "0x4000"}
+      }
+    },
+    "red": {
+      "dimensions": "16x96",
+      "bytes": 384,
+      "bpp_sha1": "eb996858e67d6c358ceed5858cc8bbe19e435506",
+      "locations": {
+        "jp": {"offset": "0x14180", "bank": "0x05", "address": "0x4180"},
+        "en": {"offset": "0x14180", "bank": "0x05", "address": "0x4180"},
+        "de": {"offset": "0x14180", "bank": "0x05", "address": "0x4180"},
+        "fr": {"offset": "0x14180", "bank": "0x05", "address": "0x4180"},
+        "it": {"offset": "0x14180", "bank": "0x05", "address": "0x4180"},
+        "es": {"offset": "0x14180", "bank": "0x05", "address": "0x4180"}
+      }
+    }
+  }
+}

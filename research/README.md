@@ -1,12 +1,13 @@
 # Research
 
-Research for **Pocket Monsters Ao / Pokémon Blue** belongs here.
+Research here is specific to **Pocket Monsters Ao / Pokémon Blue**. The release matrix starts empty on
+purpose: no hash is accepted without independent verification.
 
-Initial priorities:
+Priorities:
 
-- establish the regional and revision hash matrix;
-- compare bank layouts and version-specific address ranges;
-- document text, graphics, map, script, and audio formats.
+- [ ] verify the Japanese and localized release matrix
+- [ ] compare regional bank layouts and revision deltas
+- [ ] classify text, graphics, maps, scripts, and audio
 
-Each note records sources, verified input hashes, procedure, evidence,
-confidence, and unresolved questions. Copyrighted binary inputs stay local.
+Use `templates/note.md` and follow the shared method in
+`SakuraiTsubaki/Disassembly`.

@@ -1,0 +1,7 @@
+release_id,title,size,rom_banks_16k,cgb_flag,sgb_flag,cart_type,mapper,rom_size_code,ram_size_code,destination_code,old_licensee,header_version,header_checksum,header_checksum_valid,global_checksum,global_checksum_valid,zero_filled_banks
+ao-jp,POKEMON BLUE,524288,32,0x00,0x03,0x03,MBC1+RAM+BATTERY,0x04,0x03,0x00,0x33,0,0xE5,true,0xDC36,true,
+blue-us-eu,POKEMON BLUE,1048576,64,0x00,0x03,0x13,MBC3+RAM+BATTERY,0x05,0x03,0x01,0x33,0,0xD3,true,0x9D0A,true,45;46;47;48;49;50;51;52;53;54;55;56;57;58;59;60;61;62;63
+blue-fr,POKEMON BLUE,1048576,64,0x00,0x03,0x1B,MBC5+RAM+BATTERY,0x05,0x03,0x01,0x33,0,0xCB,true,0x56A4,true,45;46;47;48;49;50;51;52;53;54;55;56;57;58;59;60;61;62;63
+blue-de,POKEMON BLUE,1048576,64,0x00,0x03,0x1B,MBC5+RAM+BATTERY,0x05,0x03,0x01,0x33,0,0xCB,true,0x2EBC,true,45;46;47;48;49;50;51;52;53;54;55;56;57;58;59;60;61;62;63
+blue-it,POKEMON BLUE,1048576,64,0x00,0x03,0x1B,MBC5+RAM+BATTERY,0x05,0x03,0x01,0x33,0,0xCB,true,0x5E9C,true,45;46;47;48;49;50;51;52;53;54;55;56;57;58;59;60;61;62;63
+blue-es,POKEMON BLUE,1048576,64,0x00,0x03,0x1B,MBC5+RAM+BATTERY,0x05,0x03,0x01,0x33,0,0xCB,true,0x14D7,true,45;46;47;48;49;50;51;52;53;54;55;56;57;58;59;60;61;62;63

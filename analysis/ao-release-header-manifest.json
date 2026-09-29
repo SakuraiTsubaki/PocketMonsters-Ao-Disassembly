@@ -1,0 +1,18 @@
+{
+  "$schema":"https://raw.githubusercontent.com/SakuraiTsubaki/Disassembly/main/schemas/analysis-manifest.schema.json",
+  "schema_version":1,
+  "id":"ao-release-header-report",
+  "targets":["SakuraiTsubaki/PocketMonsters-Ao-Disassembly"],
+  "generator":{"name":"SakuraiTsubaki/Disassembly tools/inspect_gb_rom.py","version":"1.0.0"},
+  "command":"python tools/inspect_gb_rom.py path/to/legally-obtained-input --require-valid",
+  "inputs":[
+    {"size":524288,"sha256":"71a70e5f77c109177d21c998310ffe01a68e8cd2f41e72e7129093b890c7d3d1"},
+    {"size":1048576,"sha256":"2a951313c2640e8c2cb21f25d1db019ae6245d9c7121f754fa61afd7bee6452d"},
+    {"size":1048576,"sha256":"2cfec2223090dc9f544aa36c99c48801be5018757a1366b88d8f40739541458e"},
+    {"size":1048576,"sha256":"31317f74fed2935dfc5fbb6ada766cf8515949c85c6c6e8d32d0f752b85b8f9e"},
+    {"size":1048576,"sha256":"73dee67befed0c39cd0a6ed53a98ff5b98b3bddc3e7a0dae1d982776a4d0889b"},
+    {"size":1048576,"sha256":"e197c7535135a516fe9bf92cf7821c9f72926bf90fce3a2a5742d1b0b6a0564b"}
+  ],
+  "outputs":[{"path":"analysis/ao-release-header-report.json","sha256":"c5dc8be223c3119e1c9c5c153049fdd7f17641f38888b091daa46008c8153267"}]
+}
+

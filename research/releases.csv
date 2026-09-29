@@ -1,7 +1,8 @@
 id,region,language,revision,status,size,sha1,sha256,notes
-ao-jp,Japan,ja,0,verified,524288,0da501e3e5c51ab8fef55b092dcdd7e6b050e424,71a70e5f77c109177d21c998310ffe01a68e8cd2f41e72e7129093b890c7d3d1,verified local input; SGB=0x03; cart=0x03 MBC1+RAM+BATTERY; header/global checksums valid
-blue-us-eu,USA/Europe,en,0,verified,1048576,d7037c83e1ae5b39bde3c30787637ba1d4c48ce2,2a951313c2640e8c2cb21f25d1db019ae6245d9c7121f754fa61afd7bee6452d,verified local input; SGB=0x03; cart=0x13 MBC3+RAM+BATTERY; header/global checksums valid
-blue-fr,France,fr,0,verified,1048576,47faa910d0e073c600665bf9c83b6bd17babdf8a,73dee67befed0c39cd0a6ed53a98ff5b98b3bddc3e7a0dae1d982776a4d0889b,verified local input; SGB=0x03; cart=0x1b MBC5+RAM+BATTERY; header/global checksums valid
-blue-de,Germany,de,0,verified,1048576,20e72dc6f41493eee1fdd0cef54214e6c3389688,2cfec2223090dc9f544aa36c99c48801be5018757a1366b88d8f40739541458e,verified local input; SGB=0x03; cart=0x1b MBC5+RAM+BATTERY; header/global checksums valid
-blue-it,Italy,it,0,verified,1048576,f69ed1a1332f04c24c7db899a09019bb045fa8b3,e197c7535135a516fe9bf92cf7821c9f72926bf90fce3a2a5742d1b0b6a0564b,verified local input; SGB=0x03; cart=0x1b MBC5+RAM+BATTERY; header/global checksums valid
-blue-es,Spain,es,0,verified,1048576,7715e7b133e8634df48918b9138374110212a108,31317f74fed2935dfc5fbb6ada766cf8515949c85c6c6e8d32d0f752b85b8f9e,verified local input; SGB=0x03; cart=0x1b MBC5+RAM+BATTERY; header/global checksums valid
+ao-jp-rev0,Japan,Japanese,0,candidate,524288,0da501e3e5c51ab8fef55b092dcdd7e6b050e424,71a70e5f77c109177d21c998310ffe01a68e8cd2f41e72e7129093b890c7d3d1,"Header POKEMON BLUE; header checksum 0xe5; global checksum 0xdc36"
+blue-en-rev0,USA/Europe,English,0,candidate,1048576,d7037c83e1ae5b39bde3c30787637ba1d4c48ce2,2a951313c2640e8c2cb21f25d1db019ae6245d9c7121f754fa61afd7bee6452d,"Header POKEMON BLUE; header checksum 0xd3; global checksum 0x9d0a"
+blue-de-rev0,Germany,German,0,candidate,1048576,20e72dc6f41493eee1fdd0cef54214e6c3389688,2cfec2223090dc9f544aa36c99c48801be5018757a1366b88d8f40739541458e,"Header POKEMON BLUE; header checksum 0xcb; global checksum 0x2ebc"
+blue-es-rev0,Spain,Spanish,0,candidate,1048576,7715e7b133e8634df48918b9138374110212a108,31317f74fed2935dfc5fbb6ada766cf8515949c85c6c6e8d32d0f752b85b8f9e,"Header POKEMON BLUE; header checksum 0xcb; global checksum 0x14d7"
+blue-fr-rev0,France,French,0,candidate,1048576,47faa910d0e073c600665bf9c83b6bd17babdf8a,73dee67befed0c39cd0a6ed53a98ff5b98b3bddc3e7a0dae1d982776a4d0889b,"Header POKEMON BLUE; header checksum 0xcb; global checksum 0x56a4"
+blue-it-rev0,Italy,Italian,0,candidate,1048576,f69ed1a1332f04c24c7db899a09019bb045fa8b3,e197c7535135a516fe9bf92cf7821c9f72926bf90fce3a2a5742d1b0b6a0564b,"Header POKEMON BLUE; header checksum 0xcb; global checksum 0x5e9c"
+

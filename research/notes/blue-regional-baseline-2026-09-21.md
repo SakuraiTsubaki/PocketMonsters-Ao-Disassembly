@@ -1,6 +1,6 @@
-# Study: establish the verified Blue regional baseline
+# Study: establish the Blue regional candidate baseline
 
-- Status: verified baseline
+- Status: candidate baseline
 - Release ID: ao-jp, blue-us-eu, blue-fr, blue-de, blue-it, blue-es
 - Input SHA-256: recorded in `research/releases.csv`
 - Last updated: 2026-09-21
@@ -36,18 +36,18 @@ File offsets are used for this study. A ROM bank is `bank = file_offset // 0x400
 - English `blue-us-eu` is 1 MiB / 64 banks and reports `0x13` (MBC3+RAM+BATTERY).
 - French, German, Italian and Spanish are 1 MiB / 64 banks and report `0x1B` (MBC5+RAM+BATTERY).
 - All six report SGB flag `0x03`, title `POKEMON BLUE`, header version 0, and valid header/global checksums.
-- International banks 45–63 are all zero-filled in every verified release, so non-zero content ends within bank 44.
-- Bank 27 is byte-identical across all six verified releases.
+- International banks 45–63 are all zero-filled in every candidate release, so non-zero content ends within bank 44.
+- Bank 27 is byte-identical across all six candidate releases.
 - Japan vs English same-index equality is extremely high for several banks: 2 (99.85%), 5 (95.51%), 9 (96.23%), 10 (98.42%), 11 (94.15%), 12 (99.01%), 19 (95.81%), 25 (99.63%), 27 (100%), 31 (99.95%).
 - Other banks diverge heavily, showing that regional relationships cannot be modeled as a single text-only patch over one fixed 512 KiB layout.
 
 ## Derived results
 
-The verified set contains at least three cartridge-layout profiles: Japanese MBC1/512 KiB, English MBC3/1 MiB, and continental-European MBC5/1 MiB. The international images reserve substantial zero-filled tail space, while several early banks remain structurally very close to the Japanese input. This is enough to begin evidence-backed bank classification without assuming a public disassembly tree.
+The observed set contains at least three cartridge-layout profiles: Japanese MBC1/512 KiB, English MBC3/1 MiB, and continental-European MBC5/1 MiB. The international images reserve substantial zero-filled tail space, while several early banks remain structurally very close to the Japanese input. This is enough to begin evidence-backed bank classification without assuming a public disassembly tree.
 
 ## Interpretation and confidence
 
-Confidence is high for identity, header, size, checksum and byte-equality claims because they are computed directly from the verified local inputs. Functional classifications of individual banks remain hypotheses until control flow, references and data formats are traced.
+Confidence is high for identity, header, size, checksum and byte-equality claims because they are computed directly from the locally observed candidate inputs. Functional classifications of individual banks remain hypotheses until control flow, references and data formats are traced.
 
 ## Reproduction
 

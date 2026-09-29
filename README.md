@@ -10,11 +10,11 @@ Evidence-driven disassembly research for **Pocket Monsters Ao / Pokémon Blue**.
 | CPU | Sharp SM83 |
 | Architecture profile | `gb-sm83` |
 | Scope | Japanese and localized Blue releases; regional relationships must be demonstrated from verified inputs. |
-| Current stage | Verified regional baseline; bank classification is next |
+| Current stage | Candidate regional baseline; bank classification is in progress |
 
-## Verified baseline
+## Candidate baseline
 
-Six local inputs are now identity-verified in `research/releases.csv`: Japanese, English (USA/Europe), French, German, Italian, and Spanish. No ROM binaries are stored in this repository.
+Six local inputs are now hash-identified candidates in `research/releases.csv`: Japanese, English (USA/Europe), French, German, Italian, and Spanish. No ROM binaries are stored in this repository.
 
 Initial direct comparison already shows distinct cartridge-layout profiles (Japanese MBC1/512 KiB, English MBC3/1 MiB, continental European MBC5/1 MiB), while bank 27 is byte-identical across all six inputs. See `research/notes/blue-regional-baseline-2026-09-21.md` and `analysis/rom_headers.csv`.
 

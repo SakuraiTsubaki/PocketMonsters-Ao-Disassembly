@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "id": "ao-title-version-graphics",
+  "generator": {"repository": "SakuraiTsubaki/Disassembly", "tool": "tools/extract_gb_1bpp.py", "format": "game-boy-1bpp-8x8-tiles"},
+  "reference": {"repositories": ["pret/pokered", "einstein95/pokered-de", "einstein95/pokered-fr", "einstein95/pokered-es"], "symbol": "Version_GFX", "path": "gfx/title/blue_version.1bpp"},
+  "inputs": [
+    {"language":"ja","release":"Pocket Monsters Ao (Japan) rev 0","rom_size":524288,"rom_sha256":"71a70e5f77c109177d21c998310ffe01a68e8cd2f41e72e7129093b890c7d3d1","offset":426031,"length":64,"source_sha256":"f0d77ce443f5e46b1b4ad255068226a0da6fb44cff30b8b98ac386effd46db9a"},
+    {"language":"en","release":"Pokemon Blue (USA, Europe) rev 0","rom_size":1048576,"rom_sha256":"2a951313c2640e8c2cb21f25d1db019ae6245d9c7121f754fa61afd7bee6452d","offset":426031,"length":64,"source_sha256":"f0d77ce443f5e46b1b4ad255068226a0da6fb44cff30b8b98ac386effd46db9a"},
+    {"language":"de","release":"Pokemon Blaue Edition (Germany) rev 0","rom_size":1048576,"rom_sha256":"2cfec2223090dc9f544aa36c99c48801be5018757a1366b88d8f40739541458e","offset":426031,"length":80,"source_sha256":"65996a14ab627ffbb47437d7e41c821fd65821e074b51f0656a0181d7a9b84e7"},
+    {"language":"fr","release":"Pokemon Version Bleue (France) rev 0","rom_size":1048576,"rom_sha256":"73dee67befed0c39cd0a6ed53a98ff5b98b3bddc3e7a0dae1d982776a4d0889b","offset":426031,"length":80,"source_sha256":"9a9ce6d381c84fd4fd63a9ad5ff6356af0673b233a4d18dc56f918d5634ba75d"},
+    {"language":"es","release":"Pokemon Edicion Azul (Spain) rev 0","rom_size":1048576,"rom_sha256":"31317f74fed2935dfc5fbb6ada766cf8515949c85c6c6e8d32d0f752b85b8f9e","offset":426031,"length":64,"source_sha256":"5689b45509b7cb8909dd343f0312d4e88ff4aa3b93f13b8b6045ee4b815c76e4"},
+    {"language":"it","release":"Pokemon Versione Blu (Italy) rev 0","rom_size":1048576,"rom_sha256":"e197c7535135a516fe9bf92cf7821c9f72926bf90fce3a2a5742d1b0b6a0564b","offset":426031,"length":80,"source_sha256":"14834b309f738ab72f03f1ee67a83d39e5499e7bf7bb5f07c0b82a322ff733be"}
+  ],
+  "outputs": [
+    {"path":"analysis/ao-jp-title-version.json","sha256":"5552264b77b44a5f106c8860b65aa2a1bad3a1e5a94efca180b4b3e0d7909952"},
+    {"path":"analysis/ao-en-title-version.json","sha256":"cd16aa9a1592ee987b78a86a54e1df440be92435486695a8e48735524d7a96c8"},
+    {"path":"analysis/ao-de-title-version.json","sha256":"97a3d747c10cf5b68b4bb14c717045027982de18eb683a9013dfd5b6bc1ce900"},
+    {"path":"analysis/ao-fr-title-version.json","sha256":"e122d01918a6855961f4d2ff2b23244ce69893ebb308e0fe432ea7a81b6c6db3"},
+    {"path":"analysis/ao-es-title-version.json","sha256":"b93b6e780088812082ae96d9fb053602892b55613b11f951096e6d58553b5129"},
+    {"path":"analysis/ao-it-title-version.json","sha256":"d0a3d14fe985d455053d26954bd198c2522251abb26e1520934046d5e38a7a44"},
+    {"path":"graphics/title/version-jp.png","sha256":"8c00befbb23007ca03171283695c8ef3428d9342978b93430d86018d301c210b"},
+    {"path":"graphics/title/version-en.png","sha256":"8c00befbb23007ca03171283695c8ef3428d9342978b93430d86018d301c210b"},
+    {"path":"graphics/title/version-de.png","sha256":"a3393310a344f85f67bf7d87431220483e301a171b7c17c25466a6510b4b4433"},
+    {"path":"graphics/title/version-fr.png","sha256":"7a639e03e90fc975de6118752c2120d52c33bfbc5f8a49519fdb90a60cb8341c"},
+    {"path":"graphics/title/version-es.png","sha256":"2e23d584d582e0d58461629487819fa57803b0790beb5f253ef668b7427d41e8"},
+    {"path":"graphics/title/version-it.png","sha256":"5e3ddd15c833a4cdd81503a2231f6c922210c40b11180b89c63a7172e3ec9d66"}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-08",
+  "asset": "english-main-font",
+  "source_offset": 72320,
+  "source_length": 1024,
+  "reference": {
+    "repository": "pret/pokered",
+    "source_commit": "af519899719f0754965776faac0e836a3b906e6d",
+    "symbols_commit": "9a0c03834a435e38564445053ae9f9ece9999909",
+    "paths": ["gfx/font.asm", "home/load_font.asm", "gfx/font/font.png", "pokeblue.sym"],
+    "unique_rom_match": true
+  },
+  "generator": {"repository": "SakuraiTsubaki/Disassembly", "commit": "ed86c88d1a6ba5ea05663334732e9d354a8bb1dd", "tool": "tools/extract_gb_1bpp.py", "arguments": ["--offset", "0x11a80", "--tile-count", "128", "--tiles-per-row", "16"]},
+  "release": {"id": "blue-en-rev0", "sha1": "d7037c83e1ae5b39bde3c30787637ba1d4c48ce2", "sha256": "2a951313c2640e8c2cb21f25d1db019ae6245d9c7121f754fa61afd7bee6452d", "range_sha256": "7da47648890723845fd71777e0ef6616c38f145a02a2aa58ca71d3460381d898"},
+  "outputs": [
+    {"path": "analysis/ao-en-main-font.json", "sha256": "6b24f143efa157e405298dc8d83013096ab1bc89b7b1faa387c501ce961c0658"},
+    {"path": "graphics/font/main-font-en.png", "sha256": "ba6731b4173bc0697f213fe5c2d6a795fccd0c729b9fdd26d92c9b207c2bfa46"},
+    {"path": "research/english-main-font.md", "sha256": "b07142315b9dd7633134ec091fec99408d9df4d24238e4cdd55093b7740a9cc4"}
+  ],
+  "raw_rom_bytes_included": false
+}

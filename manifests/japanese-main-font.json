@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-08",
+  "asset": "japanese-main-font",
+  "format": "game-boy-1bpp-8x8-tiles",
+  "tile_count": 128,
+  "source_offset": 73369,
+  "source_length": 1024,
+  "reference": {
+    "repository": "SeafarersWind/pokeblue",
+    "source_commit": "c40db538e00d76c32092b6e4a88c9c851d3c338f",
+    "paths": ["gfx/font.asm", "home/load_font.asm", "gfx/font/font_rg.png"],
+    "match_method": "source PNG converted tilewise to 1bpp and searched as an exact byte sequence",
+    "unique_rom_match": true
+  },
+  "generator": {
+    "repository": "SakuraiTsubaki/Disassembly",
+    "commit": "ed86c88d1a6ba5ea05663334732e9d354a8bb1dd",
+    "tool": "tools/extract_gb_1bpp.py",
+    "arguments": ["--offset", "0x11e99", "--tile-count", "128", "--tiles-per-row", "16"]
+  },
+  "releases": [
+    {"id": "ao-jp-rev0", "sha1": "0da501e3e5c51ab8fef55b092dcdd7e6b050e424", "sha256": "71a70e5f77c109177d21c998310ffe01a68e8cd2f41e72e7129093b890c7d3d1", "range_sha256": "11bfba65ad8f3b4a93f3c9b400afb611fb4072b26e2c40c77aab67bd08c9bf15"}
+  ],
+  "outputs": [
+    {"path": "analysis/ao-jp-main-font.json", "sha256": "73adaf40f93668fbe587dc2512f4be4f475e61de916a6fe449bbe61377062e48"},
+    {"path": "graphics/font/main-font-jp.png", "sha256": "7264ef108040d7905db2d27476c6e3f47cd30f58b64767f10fc8290a355888cf"},
+    {"path": "research/japanese-main-font.md", "sha256": "5c2bb6e8649f7abb371503e3ea3fa9b9cae73baafb3cb29dbe0a11ba1d587024"}
+  ],
+  "raw_rom_bytes_included": false
+}

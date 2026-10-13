@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "asset_group": "ao-blue-main-font-loaders",
+  "generator": {"repository": "SakuraiTsubaki/Disassembly", "tool": "tools/locate_gb_1bpp_loader.py", "source_length": 1024},
+  "releases": [
+    {"id":"ao-jp-rev0","rom_sha256":"71a70e5f77c109177d21c998310ffe01a68e8cd2f41e72e7129093b890c7d3d1","loader_offset":14048,"loader_report":"analysis/ao-jp-rev0-main-font-loader.json","font_report":"analysis/ao-jp-main-font.json"},
+    {"id":"blue-en-rev0","rom_sha256":"2a951313c2640e8c2cb21f25d1db019ae6245d9c7121f754fa61afd7bee6452d","loader_offset":13952,"loader_report":"analysis/blue-en-rev0-main-font-loader.json","font_report":"analysis/ao-en-main-font.json"},
+    {"id":"blue-de-rev0","rom_sha256":"2cfec2223090dc9f544aa36c99c48801be5018757a1366b88d8f40739541458e","loader_offset":13978,"loader_report":"analysis/blue-de-rev0-main-font-loader.json","font_report":"analysis/ao-de-main-font.json"},
+    {"id":"blue-es-rev0","rom_sha256":"31317f74fed2935dfc5fbb6ada766cf8515949c85c6c6e8d32d0f752b85b8f9e","loader_offset":13983,"loader_report":"analysis/blue-es-rev0-main-font-loader.json","font_report":"analysis/ao-es-main-font.json"},
+    {"id":"blue-fr-rev0","rom_sha256":"73dee67befed0c39cd0a6ed53a98ff5b98b3bddc3e7a0dae1d982776a4d0889b","loader_offset":13981,"loader_report":"analysis/blue-fr-rev0-main-font-loader.json","font_report":"analysis/ao-fr-main-font.json"},
+    {"id":"blue-it-rev0","rom_sha256":"e197c7535135a516fe9bf92cf7821c9f72926bf90fce3a2a5742d1b0b6a0564b","loader_offset":13976,"loader_report":"analysis/blue-it-rev0-main-font-loader.json","font_report":"analysis/ao-it-main-font.json"}
+  ],
+  "outputs": [
+    {"path":"analysis/ao-jp-rev0-main-font-loader.json","sha256":"63ed210b724c618065ecbba524633d8f0845373c619750cf087b95577bd7083d"},
+    {"path":"analysis/blue-en-rev0-main-font-loader.json","sha256":"6b2269ad26ea964d581d1fd82c80e9f9d969247a6756f951d371537b019d68f4"},
+    {"path":"analysis/blue-de-rev0-main-font-loader.json","sha256":"712a3f1064b8bd3ced68c8863953c030af21904b7f1de056c6a92aee8524e884"},
+    {"path":"analysis/blue-es-rev0-main-font-loader.json","sha256":"4ee2468e218b24d89979d427a3fd9e986bbb5f3e7adf644e603c4c664b0f6a32"},
+    {"path":"analysis/blue-fr-rev0-main-font-loader.json","sha256":"0674ff50d16862fc98475fe30a22eea095b8585e663c8801594a11f30bdc00cc"},
+    {"path":"analysis/blue-it-rev0-main-font-loader.json","sha256":"40ab68d249fe07eea0db4971310fe2cb111847f0984492e1eab258ed1991ff59"},
+    {"path":"research/main-font-loaders.md","sha256":"d5594582f4d339569c1440b1d4008a58ae1f4e99317c248adccd334c34f9b25d"}
+  ],
+  "raw_rom_bytes_included": false
+}
+

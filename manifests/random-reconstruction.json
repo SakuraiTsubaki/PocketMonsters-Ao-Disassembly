@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "function": "Random_",
+  "releases": [
+    "ao-jp-rev0",
+    "blue-en-rev0",
+    "blue-de-rev0",
+    "blue-es-rev0",
+    "blue-fr-rev0",
+    "blue-it-rev0"
+  ],
+  "generator": {
+    "repository": "SakuraiTsubaki/Disassembly",
+    "tool": "tools/locate_gen1_random.py",
+    "tool_sha256": "0c80e8a908ca3e7695520b46d739cdf9ce8c0004dd44c183d62261c7cbedfbd1"
+  },
+  "outputs": [
+    {
+      "path": "src/random.asm",
+      "sha256": "921288801c334a3f6fda22d073bde146b01a5486cdf45710fc65a93e277d85da"
+    },
+    {
+      "path": "analysis/ao-jp-rev0-random.json",
+      "sha256": "48da189565ec4a21cf20ce41fe7450e2a1ddd1ee03f643537093d1dd4b1211d5"
+    },
+    {
+      "path": "analysis/blue-en-rev0-random.json",
+      "sha256": "63788cbadb6e34b04be2ae8043b366ed03a1017e6d4570aab83ce06229a668cb"
+    },
+    {
+      "path": "analysis/blue-de-rev0-random.json",
+      "sha256": "41ffcf5c84f04ba1f14f285e64b8ab015c77049eaa3c084ac11fc695d807f282"
+    },
+    {
+      "path": "analysis/blue-es-rev0-random.json",
+      "sha256": "afd90acb6de20d7d4ea0e1b245a39effba2a2f43f02b85c71a814769d8490b0c"
+    },
+    {
+      "path": "analysis/blue-fr-rev0-random.json",
+      "sha256": "331b8bc7ff6bcc4e9eff73c8397d4541400095f3721381dc2a1c0826d90f5ea2"
+    },
+    {
+      "path": "analysis/blue-it-rev0-random.json",
+      "sha256": "95d55a9f0582a8dfbca2cdc1fd7f62810c8d5e1417746d925d05ada7de56da7b"
+    },
+    {
+      "path": "research/random-reconstruction.md",
+      "sha256": "c1c5b671ff42fd8045d60cbc81ce541ee26f5029b4331bf8caddf23989461bbb"
+    },
+    {
+      "path": "tests/test_random_reconstruction.py",
+      "sha256": "64234fb080e6b68a192e5130fc464b9a34a7d99be204ba9a23798c915a556f2e"
+    }
+  ],
+  "raw_rom_bytes_included": false
+}

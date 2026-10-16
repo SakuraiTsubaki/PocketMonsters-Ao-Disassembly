@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "function": "Multiply",
+  "releases": [
+    "ao-jp-rev0",
+    "blue-en-rev0",
+    "blue-de-rev0",
+    "blue-es-rev0",
+    "blue-fr-rev0",
+    "blue-it-rev0"
+  ],
+  "generator": {
+    "repository": "SakuraiTsubaki/Disassembly",
+    "tool": "tools/locate_gen1_multiply_wrapper.py",
+    "tool_sha256": "6026e195e2f8113847a08e9160b5f17b1fcca4c55d59c888e08cded25568713f"
+  },
+  "outputs": [
+    {
+      "path": "src/multiply_wrapper.asm",
+      "sha256": "21ff259f9fe625e0f1352e00d78a420dd8393853e9de1b79729d2e86d0a97014"
+    },
+    {
+      "path": "analysis/ao-jp-rev0-multiply-wrapper.json",
+      "sha256": "8956999e15f4ce9b5e19827fa8c34bc4f2f6c36feb228e6b8e92518421467513"
+    },
+    {
+      "path": "analysis/blue-en-rev0-multiply-wrapper.json",
+      "sha256": "21b0672a9210872e20c8e161580c9246e54409cdb7f500bd728cf0057557206b"
+    },
+    {
+      "path": "analysis/blue-de-rev0-multiply-wrapper.json",
+      "sha256": "a288728113a0e14a287400c7c3ddba7e31d9f1056c8a0a51f1cef606c72d19cd"
+    },
+    {
+      "path": "analysis/blue-es-rev0-multiply-wrapper.json",
+      "sha256": "8bcf6eafe56ea4e98fc70bd46af5d393a996569486d829d5050319d05af59f15"
+    },
+    {
+      "path": "analysis/blue-fr-rev0-multiply-wrapper.json",
+      "sha256": "847580e436fa77712cca97b3f6416d7d367ef5d07c2de54b1e285ff9769ef855"
+    },
+    {
+      "path": "analysis/blue-it-rev0-multiply-wrapper.json",
+      "sha256": "379b675fd8c79c8c327d8d93e3cb6ada42a165bb5b203da382c3bbe0722bebbf"
+    },
+    {
+      "path": "research/multiply-wrapper-reconstruction.md",
+      "sha256": "cedc244b0190cd2090e1b92a1f4e354a69dcb910cf07510f105ff58909a1b145"
+    },
+    {
+      "path": "tests/test_multiply_wrapper_reconstruction.py",
+      "sha256": "9b78b6477798f52fb8c3a34f2f50b07fe00ba3b05a552242723cd4b51af0857f"
+    }
+  ],
+  "raw_rom_bytes_included": false
+}

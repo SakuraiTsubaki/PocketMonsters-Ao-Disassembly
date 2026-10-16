@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "function": "_Multiply",
+  "releases": [
+    "ao-jp-rev0",
+    "blue-en-rev0",
+    "blue-de-rev0",
+    "blue-es-rev0",
+    "blue-fr-rev0",
+    "blue-it-rev0"
+  ],
+  "generator": {
+    "repository": "SakuraiTsubaki/Disassembly",
+    "tool": "tools/inspect_gen1_multiply_core.py",
+    "tool_sha256": "a7a23dd6b2d3d80c7ef264826a4a24d08decc11141fcd2fc377c0ecdac2a6b80"
+  },
+  "outputs": [
+    {
+      "path": "src/multiply_core.asm",
+      "sha256": "02921fe7ee731912954474d5a66f42f015fd1b69a0cab38a6a25347517825a7e"
+    },
+    {
+      "path": "analysis/ao-jp-rev0-multiply-core.json",
+      "sha256": "93545381218df8291a37a8e6238e3ac0a1c523549524582e4cfc1beb5125b25e"
+    },
+    {
+      "path": "analysis/blue-en-rev0-multiply-core.json",
+      "sha256": "325b69a01777d5a5dcc64a22a8eeaa6225d9bc9f95bef7af80bce29840456c5c"
+    },
+    {
+      "path": "analysis/blue-de-rev0-multiply-core.json",
+      "sha256": "b6fce3fc0729b1afbb107baa6b53890178c4fc3863c58407de3a092c670c914a"
+    },
+    {
+      "path": "analysis/blue-es-rev0-multiply-core.json",
+      "sha256": "90633f1c82a762df22de7289a86b19b5c31001dc058702953f6b834e06e4dd00"
+    },
+    {
+      "path": "analysis/blue-fr-rev0-multiply-core.json",
+      "sha256": "72049ba912b8e1be1a197c10afeb7813a10227d3282f6cfba5a358d5ca3d7c47"
+    },
+    {
+      "path": "analysis/blue-it-rev0-multiply-core.json",
+      "sha256": "39ad9d236aa1dfb7f1d18af03fc8f7c56af5fbff57b50232b1fdc581bb940425"
+    },
+    {
+      "path": "research/multiply-core-reconstruction.md",
+      "sha256": "5f23393b63c8c15c4b9314bb6da05d26a45766e261bdcf484f3ed783ad085601"
+    },
+    {
+      "path": "tests/test_multiply_core_reconstruction.py",
+      "sha256": "a8f903b64f6cd8a684c0ff16c50be83f6ae1393b83266f8279f41b9f791b7967"
+    }
+  ],
+  "raw_rom_bytes_included": false
+}

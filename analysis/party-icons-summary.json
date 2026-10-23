@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "game": "Pokemon Blue",
+  "asset": "AnimatedPartyIcons",
+  "origin_reference": "ao-jp-rev0",
+  "release_count": 6,
+  "source_sha256": "7512db31bd72d44a7b5a918167d1e2baad594729fc591b428b86f07fb9ac7453",
+  "icon_count": 4,
+  "frames_per_icon": 2,
+  "png": "graphics/pokemon/party-icons-atlas.png",
+  "source_png": "graphics/pokemon/party-icons-source-atlas.png",
+  "layout": "graphics/pokemon/party-icons-atlas.json",
+  "releases": [
+    {
+      "id": "ao-jp-rev0",
+      "language": "Japanese",
+      "revision": 0,
+      "sha256": "71a70e5f77c109177d21c998310ffe01a68e8cd2f41e72e7129093b890c7d3d1",
+      "origin_reference": true,
+      "source_offset": 466445,
+      "evidence": "analysis/ao-jp-rev0-party-icons.json"
+    },
+    {
+      "id": "blue-en-rev0",
+      "language": "English",
+      "revision": 0,
+      "sha256": "2a951313c2640e8c2cb21f25d1db019ae6245d9c7121f754fa61afd7bee6452d",
+      "origin_reference": false,
+      "source_offset": 465241,
+      "evidence": "analysis/blue-en-rev0-party-icons.json"
+    },
+    {
+      "id": "blue-de-rev0",
+      "language": "German",
+      "revision": 0,
+      "sha256": "2cfec2223090dc9f544aa36c99c48801be5018757a1366b88d8f40739541458e",
+      "origin_reference": false,
+      "source_offset": 465203,
+      "evidence": "analysis/blue-de-rev0-party-icons.json"
+    },
+    {
+      "id": "blue-es-rev0",
+      "language": "Spanish",
+      "revision": 0,
+      "sha256": "31317f74fed2935dfc5fbb6ada766cf8515949c85c6c6e8d32d0f752b85b8f9e",
+      "origin_reference": false,
+      "source_offset": 465225,
+      "evidence": "analysis/blue-es-rev0-party-icons.json"
+    },
+    {
+      "id": "blue-fr-rev0",
+      "language": "French",
+      "revision": 0,
+      "sha256": "73dee67befed0c39cd0a6ed53a98ff5b98b3bddc3e7a0dae1d982776a4d0889b",
+      "origin_reference": false,
+      "source_offset": 465194,
+      "evidence": "analysis/blue-fr-rev0-party-icons.json"
+    },
+    {
+      "id": "blue-it-rev0",
+      "language": "Italian",
+      "revision": 0,
+      "sha256": "e197c7535135a516fe9bf92cf7821c9f72926bf90fce3a2a5742d1b0b6a0564b",
+      "origin_reference": false,
+      "source_offset": 465305,
+      "evidence": "analysis/blue-it-rev0-party-icons.json"
+    }
+  ],
+  "raw_rom_bytes_included": false
+}

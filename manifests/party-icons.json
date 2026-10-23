@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "game": "Pokemon Blue",
+  "asset": "AnimatedPartyIcons",
+  "origin_reference": "ao-jp-rev0",
+  "release_count": 6,
+  "generator": {
+    "repository": "SakuraiTsubaki/Disassembly",
+    "tool": "tools/extract_gen1_party_icons.py",
+    "tool_sha256": "5fbb62555f95571d3567d67adad69b3798080a177319075d7575be2996a99960"
+  },
+  "outputs": [
+    {
+      "path": "graphics/pokemon/party-icons-atlas.png",
+      "sha256": "0de928b78122de91cc72045751fc696a1355100dcee0ad1c6f79c40c48449801"
+    },
+    {
+      "path": "graphics/pokemon/party-icons-source-atlas.png",
+      "sha256": "6ffe609e236f2a45b98490fa2857c21c2ac1bc9ba6233d7cef17fdfe189d96ab"
+    },
+    {
+      "path": "graphics/pokemon/party-icons-atlas.json",
+      "sha256": "7b49d88045ab5977c074c8b8a3c196fbc695bb2a6d83b87fc8413867fcb87947"
+    },
+    {
+      "path": "analysis/ao-jp-rev0-party-icons.json",
+      "sha256": "09a2b4c3f136a87c0b0ce7b45f17ef7515640be79933bcb5cdf945dbc00ac071"
+    },
+    {
+      "path": "analysis/blue-en-rev0-party-icons.json",
+      "sha256": "a1a36b6e56058240c6f3ee80b5db70c7d85f868769dc9cebdba924d9cd416f3f"
+    },
+    {
+      "path": "analysis/blue-de-rev0-party-icons.json",
+      "sha256": "a82424340ebb6379e9d80f8caf133a8101fb1b38b94e96e81c0348b87c15c2bc"
+    },
+    {
+      "path": "analysis/blue-es-rev0-party-icons.json",
+      "sha256": "5ea71cceb6dbac1208df7e4834f434ce6ebde6b642d0c6597b093bc926cdd0c6"
+    },
+    {
+      "path": "analysis/blue-fr-rev0-party-icons.json",
+      "sha256": "d31961a0d36b9bb18045cd6ca09c7137f339672d0bc7ee0a819deccaf45fab39"
+    },
+    {
+      "path": "analysis/blue-it-rev0-party-icons.json",
+      "sha256": "dfb100b038feeb895c55c7a0fce760eaa7796ac3485b57f90f74d9e93906f2e2"
+    },
+    {
+      "path": "analysis/party-icons-summary.json",
+      "sha256": "909b7f5a1dce4c0203b53d04004ff89ac9551123435ff19c27f1e1652191cec2"
+    },
+    {
+      "path": "research/party-icons.md",
+      "sha256": "84bb0172cdefb72f4d2ee3ed34b0716cbe7bdb2d05fb88ff4ba321444f860cea"
+    },
+    {
+      "path": "tests/test_party_icons.py",
+      "sha256": "8cb0bc6f23b82f3f82b2424066f61e7080a95d57b7ce131810dc6c13d095fb95"
+    }
+  ],
+  "raw_rom_bytes_included": false
+}

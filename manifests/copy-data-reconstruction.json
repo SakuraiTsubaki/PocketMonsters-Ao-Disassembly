@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "function": "CopyData",
+  "releases": [
+    "ao-jp-rev0",
+    "blue-en-rev0",
+    "blue-de-rev0",
+    "blue-es-rev0",
+    "blue-fr-rev0",
+    "blue-it-rev0"
+  ],
+  "generator": {
+    "repository": "SakuraiTsubaki/Disassembly",
+    "tool": "tools/locate_gen1_copy_data.py",
+    "tool_sha256": "02cd7f4be29e33890f7f9143e0f8a71d89b7025635102d95aba9f3ed285149e1"
+  },
+  "outputs": [
+    {
+      "path": "src/copy_data.asm",
+      "sha256": "764f31a8ae8edd7deb47dce05178d46b02ab16b70ea1b53f32db8ded04b6a056"
+    },
+    {
+      "path": "analysis/ao-jp-rev0-copy-data.json",
+      "sha256": "b754490eb7d71717c262384aaf45b4f8a1eaa3f02972564e33b87f1f649df712"
+    },
+    {
+      "path": "analysis/blue-en-rev0-copy-data.json",
+      "sha256": "0b12187b49b3ff8363619f87451aef4bd377c4f2ed84b2c9a65bcb899e42669b"
+    },
+    {
+      "path": "analysis/blue-de-rev0-copy-data.json",
+      "sha256": "8072be32aa0b2a2f179e15eda8cfe6eed59f24d9a02f27ad169db5995f7446be"
+    },
+    {
+      "path": "analysis/blue-es-rev0-copy-data.json",
+      "sha256": "c8326e5b8665b844d9e687bb99c858e24cb304371ad873289ab77aecc3141dca"
+    },
+    {
+      "path": "analysis/blue-fr-rev0-copy-data.json",
+      "sha256": "5ee022e014ebb97d1f428e9cdee0ba6fd4b9042797631174e9fe16feca3e8ba2"
+    },
+    {
+      "path": "analysis/blue-it-rev0-copy-data.json",
+      "sha256": "e35d64806813c387a9b7d59be94e9e0d28f6746df8ded5014974ea3622f87482"
+    },
+    {
+      "path": "research/copy-data-reconstruction.md",
+      "sha256": "acaad0758c6a900ffd463d0e888e6b4066996f45813eee0ff07f6c667ff9ac10"
+    },
+    {
+      "path": "tests/test_copy_data_reconstruction.py",
+      "sha256": "bc795ed728524e7f5045995c62b21f8cf7f03be5ab5c9439ce24638598edf878"
+    }
+  ],
+  "raw_rom_bytes_included": false
+}

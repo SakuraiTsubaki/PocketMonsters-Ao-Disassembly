@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "game": "Ao",
+  "function": "FillMemory",
+  "profile": "classic",
+  "origin_reference": "ao-jp-rev0",
+  "release_count": 6,
+  "source": "src/fill_memory.asm",
+  "releases": [
+    {
+      "id": "ao-jp-rev0",
+      "language": "Japanese",
+      "revision": 0,
+      "status": "candidate",
+      "sha256": "71a70e5f77c109177d21c998310ffe01a68e8cd2f41e72e7129093b890c7d3d1",
+      "origin_reference": true,
+      "profile": "classic",
+      "address": "0x3740",
+      "code_sha256": "f51154152da74a85dd7c3f8008efe3277a3444d8d398fadd7682308ada975bbf",
+      "evidence": "analysis/ao-jp-rev0-fill-memory.json"
+    },
+    {
+      "id": "blue-en-rev0",
+      "language": "English",
+      "revision": 0,
+      "status": "candidate",
+      "sha256": "2a951313c2640e8c2cb21f25d1db019ae6245d9c7121f754fa61afd7bee6452d",
+      "origin_reference": false,
+      "profile": "classic",
+      "address": "0x36E0",
+      "code_sha256": "f51154152da74a85dd7c3f8008efe3277a3444d8d398fadd7682308ada975bbf",
+      "evidence": "analysis/blue-en-rev0-fill-memory.json"
+    },
+    {
+      "id": "blue-de-rev0",
+      "language": "German",
+      "revision": 0,
+      "status": "candidate",
+      "sha256": "2cfec2223090dc9f544aa36c99c48801be5018757a1366b88d8f40739541458e",
+      "origin_reference": false,
+      "profile": "classic",
+      "address": "0x36FA",
+      "code_sha256": "f51154152da74a85dd7c3f8008efe3277a3444d8d398fadd7682308ada975bbf",
+      "evidence": "analysis/blue-de-rev0-fill-memory.json"
+    },
+    {
+      "id": "blue-es-rev0",
+      "language": "Spanish",
+      "revision": 0,
+      "status": "candidate",
+      "sha256": "31317f74fed2935dfc5fbb6ada766cf8515949c85c6c6e8d32d0f752b85b8f9e",
+      "origin_reference": false,
+      "profile": "classic",
+      "address": "0x36FF",
+      "code_sha256": "f51154152da74a85dd7c3f8008efe3277a3444d8d398fadd7682308ada975bbf",
+      "evidence": "analysis/blue-es-rev0-fill-memory.json"
+    },
+    {
+      "id": "blue-fr-rev0",
+      "language": "French",
+      "revision": 0,
+      "status": "candidate",
+      "sha256": "73dee67befed0c39cd0a6ed53a98ff5b98b3bddc3e7a0dae1d982776a4d0889b",
+      "origin_reference": false,
+      "profile": "classic",
+      "address": "0x36FD",
+      "code_sha256": "f51154152da74a85dd7c3f8008efe3277a3444d8d398fadd7682308ada975bbf",
+      "evidence": "analysis/blue-fr-rev0-fill-memory.json"
+    },
+    {
+      "id": "blue-it-rev0",
+      "language": "Italian",
+      "revision": 0,
+      "status": "candidate",
+      "sha256": "e197c7535135a516fe9bf92cf7821c9f72926bf90fce3a2a5742d1b0b6a0564b",
+      "origin_reference": false,
+      "profile": "classic",
+      "address": "0x36F8",
+      "code_sha256": "f51154152da74a85dd7c3f8008efe3277a3444d8d398fadd7682308ada975bbf",
+      "evidence": "analysis/blue-it-rev0-fill-memory.json"
+    }
+  ],
+  "raw_rom_bytes_included": false
+}

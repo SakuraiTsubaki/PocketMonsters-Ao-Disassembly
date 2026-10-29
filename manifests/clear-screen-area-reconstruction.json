@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "axis": "Disassembly",
+  "game": "Ao",
+  "function": "ClearScreenArea",
+  "profile": "classic",
+  "origin_reference": "ao-jp-rev0",
+  "release_count": 6,
+  "generator": {
+    "repository": "SakuraiTsubaki/Disassembly",
+    "tool": "tools/catalog_gen1_clear_screen_area.py",
+    "tool_sha256": "f59d2c538455cb5da99d8107e1cc4c52e21c5360daa4757ba405662ed042c733"
+  },
+  "outputs": [
+    {
+      "path": "research/releases.csv",
+      "sha256": "de00a4f3c45edbd5310645201f4b04bdcdc71c3c4d843767df400a6e419b599b"
+    },
+    {
+      "path": "src/clear_screen_area.asm",
+      "sha256": "438405dd664d6e9311dd0692ee0d5a7bf7e3d19cd4ed4442388d68a32eee9d6f"
+    },
+    {
+      "path": "analysis/clear-screen-area-summary.json",
+      "sha256": "506941014295894704f4f0d71561ff399e7d77ca25f9cc513a86b8fc59c48b7a"
+    },
+    {
+      "path": "analysis/ao-jp-rev0-clear-screen-area.json",
+      "sha256": "bf93868d886fb0520643fc021d944774c0a73897ee54147fc25addd10a62ee51"
+    },
+    {
+      "path": "analysis/blue-en-rev0-clear-screen-area.json",
+      "sha256": "0234ea83d0d2666c296c91e4429107b3add33e425438e579250dd32551d9fd71"
+    },
+    {
+      "path": "analysis/blue-de-rev0-clear-screen-area.json",
+      "sha256": "5631dec933e9f5771c5b65da9790f3181c6be3577f2170297eee6cc4cae30ae2"
+    },
+    {
+      "path": "analysis/blue-es-rev0-clear-screen-area.json",
+      "sha256": "dadde4f070f68a09862d5c9c9a3a9a8e4f64c13fbd82783edae30ea0b30092d1"
+    },
+    {
+      "path": "analysis/blue-fr-rev0-clear-screen-area.json",
+      "sha256": "ee0421c032c2395b9ee35502c65a676f6178f22ff8ebfcc81407a8ff9108cc3c"
+    },
+    {
+      "path": "analysis/blue-it-rev0-clear-screen-area.json",
+      "sha256": "83cec3a6be6c2e6ffa7f7ab1a0731ddf97b8b128224ab4197fa53b273368e4fa"
+    },
+    {
+      "path": "research/clear-screen-area-reconstruction.md",
+      "sha256": "ea4f8b5254e9cc299fe9a7c8d843e181ed64524b1f66bc471a52cdc5d1cd1f51"
+    },
+    {
+      "path": "tests/test_clear_screen_area_reconstruction.py",
+      "sha256": "8e83dd844d85179708251f3784594c3d6ec33664d81da31c1e74e79409e985b6"
+    }
+  ],
+  "raw_rom_bytes_included": false
+}

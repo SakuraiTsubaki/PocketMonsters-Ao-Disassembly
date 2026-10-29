@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "game": "Ao",
+  "axis": "Disassembly",
+  "function": "ClearScreen",
+  "profile": "classic",
+  "origin_reference": "ao-jp-rev0",
+  "release_count": 6,
+  "generator": {
+    "repository": "SakuraiTsubaki/Disassembly",
+    "tool": "tools/catalog_gen1_clear_screen.py",
+    "tool_sha256": "8122f4bdbea9d93e12041df5d81788d307dfe26b68783d187c047eda11e2ea7b"
+  },
+  "outputs": [
+    {
+      "path": "research/releases.csv",
+      "sha256": "de00a4f3c45edbd5310645201f4b04bdcdc71c3c4d843767df400a6e419b599b"
+    },
+    {
+      "path": "src/clear_screen.asm",
+      "sha256": "f45bcb9b9dfb6492abc5013f7efd3d8ff1315954188519233337f1883a6cf65b"
+    },
+    {
+      "path": "analysis/clear-screen-summary.json",
+      "sha256": "41b73a70f83c9e12d31019bd1c6a429a72d163a0cd4145479a4afc286d914d25"
+    },
+    {
+      "path": "analysis/ao-jp-rev0-clear-screen.json",
+      "sha256": "cf5da5678a2947082b18f0dea38910a6b61e91a45e8ae41eaacaff09fb0708aa"
+    },
+    {
+      "path": "analysis/blue-en-rev0-clear-screen.json",
+      "sha256": "87244e3bf00d3c3a5c3b95865d62ccb108c9bc106e205ccf5b4aa7e709add30f"
+    },
+    {
+      "path": "analysis/blue-de-rev0-clear-screen.json",
+      "sha256": "ed1178557fb008c7a1b86044d67c001a89057e116ab37dcacc0971012bcc90a8"
+    },
+    {
+      "path": "analysis/blue-es-rev0-clear-screen.json",
+      "sha256": "101589b1a4b40e9f9cc1c44f86240830ef811c5439291dd20021199f3cd53023"
+    },
+    {
+      "path": "analysis/blue-fr-rev0-clear-screen.json",
+      "sha256": "31f618a6e5379d4f6d092fcac8011795fc7ff243a6c3449d64f8784a4c3ee740"
+    },
+    {
+      "path": "analysis/blue-it-rev0-clear-screen.json",
+      "sha256": "80e4598e773205eafb0b9db01bedcbceda2525c53d0ba59171c65f2b639f40f6"
+    },
+    {
+      "path": "research/clear-screen-reconstruction.md",
+      "sha256": "ded7c3fc4fccdc7d093399ab2196177bd850b80d92f010904217f6d818e47aa1"
+    },
+    {
+      "path": "tests/test_clear_screen_reconstruction.py",
+      "sha256": "3d748f4f4df006402c19b739b9a8974db8b964caa5f57773686ec026ac8497a6"
+    }
+  ],
+  "raw_rom_bytes_included": false
+}

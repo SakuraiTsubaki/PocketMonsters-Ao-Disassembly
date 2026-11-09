@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "axis": "Disassembly",
+  "game": "Ao",
+  "profile": "classic",
+  "functions": [
+    "DelayFrame",
+    "DelayFrames"
+  ],
+  "origin_reference": "ao-jp-rev0",
+  "release_count": 6,
+  "generator": {
+    "repository": "SakuraiTsubaki/Disassembly",
+    "tool": "tools/catalog_gen1_delay.py",
+    "tool_sha256": "4979f8ccaea6baad423088f48eecf9830bb62dcd757328da71f2d82b18b0549d"
+  },
+  "outputs": [
+    {
+      "path": "research/releases.csv",
+      "sha256": "de00a4f3c45edbd5310645201f4b04bdcdc71c3c4d843767df400a6e419b599b"
+    },
+    {
+      "path": "src/delay.asm",
+      "sha256": "422fa50e2e93d7720047487f4ff9282956d102e9db1e9f463f461487606fcf76"
+    },
+    {
+      "path": "analysis/delay-summary.json",
+      "sha256": "5c13f9fe1c6dfcb5a4596085d11cf610dca7a89418aaab5e8ca26c17f2a540f9"
+    },
+    {
+      "path": "analysis/ao-jp-rev0-delay.json",
+      "sha256": "3cd41819c8cba28c12e7151f59e031895e7ac1eb7f560905525267e4e04bb4fc"
+    },
+    {
+      "path": "analysis/blue-en-rev0-delay.json",
+      "sha256": "95f3fcec8887b24e75a219a4da8474b9cfaaf2a62d8c77d99b8990c832c7feb7"
+    },
+    {
+      "path": "analysis/blue-de-rev0-delay.json",
+      "sha256": "362a919404f7535fbb64ad5c063ffe74d2c11af82e495edbde6f65b0d10356e2"
+    },
+    {
+      "path": "analysis/blue-es-rev0-delay.json",
+      "sha256": "67aad67087b9825840e296ce41f6c5688a85ffa1e8925e489fb280df93c9330b"
+    },
+    {
+      "path": "analysis/blue-fr-rev0-delay.json",
+      "sha256": "4f4ebdcfd110076987874b9d5059798d2071f85a827753e70e1fadcd43f8c7d4"
+    },
+    {
+      "path": "analysis/blue-it-rev0-delay.json",
+      "sha256": "90fb8339efa6195247087be6b9d9873aaa91e37daea3647c9fedcee74e049314"
+    },
+    {
+      "path": "research/delay-reconstruction.md",
+      "sha256": "91783bbd16e1b3b50b64a34f9ffcbd0c27dd39ac6528db1c44fb64d57cdb51ee"
+    },
+    {
+      "path": "tests/test_delay_reconstruction.py",
+      "sha256": "660d3121c49c00ae822757a0c49ca0019a9cd72459e96a801c292108e8a58d95"
+    }
+  ],
+  "raw_rom_bytes_included": false
+}

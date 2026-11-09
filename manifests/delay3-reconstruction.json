@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "axis": "Disassembly",
+  "game": "Ao",
+  "profile": "classic",
+  "functions": [
+    "Delay3",
+    "ProtectedDelay3"
+  ],
+  "origin_reference": "ao-jp-rev0",
+  "release_count": 6,
+  "generator": {
+    "repository": "SakuraiTsubaki/Disassembly",
+    "tool": "tools/catalog_gen1_delay3.py",
+    "tool_sha256": "167f3aea2271487fc0c2bc885686c688b51c3e1ee19cb67dfbdc9073b4f34e99"
+  },
+  "outputs": [
+    {
+      "path": "research/releases.csv",
+      "sha256": "de00a4f3c45edbd5310645201f4b04bdcdc71c3c4d843767df400a6e419b599b"
+    },
+    {
+      "path": "analysis/delay-summary.json",
+      "sha256": "5c13f9fe1c6dfcb5a4596085d11cf610dca7a89418aaab5e8ca26c17f2a540f9"
+    },
+    {
+      "path": "src/delay3.asm",
+      "sha256": "2cfee926b987eccc759b1dd62dfe89e47c3e5e9d91da8a4569ac6f0746e28f59"
+    },
+    {
+      "path": "analysis/delay3-summary.json",
+      "sha256": "dc32b1871f066bc580a6e8de8525c8a02e645dec3433c261b0fd6405369849a4"
+    },
+    {
+      "path": "analysis/ao-jp-rev0-delay3.json",
+      "sha256": "de6d483bfb6da2e63fc8b80ff85acfe533e887f9ba5f68637c1240de432674c7"
+    },
+    {
+      "path": "analysis/blue-en-rev0-delay3.json",
+      "sha256": "e042adfd35c2665b724f4e7c29af04794a039751ce15ec12279f5b4368c7eb26"
+    },
+    {
+      "path": "analysis/blue-de-rev0-delay3.json",
+      "sha256": "84824a4cb7a3920a33eea5b6215e6ba96f0f0d68384ddaa54073722b40e00332"
+    },
+    {
+      "path": "analysis/blue-es-rev0-delay3.json",
+      "sha256": "512c36e5468d9f27f0266c497979ae9c4d70ed2bfa95b25d88d937c32d18a387"
+    },
+    {
+      "path": "analysis/blue-fr-rev0-delay3.json",
+      "sha256": "20ac3c535ae1ff4a7e3aaaa523abd480de6d570cc47968cbde25112bdca3de7d"
+    },
+    {
+      "path": "analysis/blue-it-rev0-delay3.json",
+      "sha256": "ff8bff2cbc7e7d9cbc577729784bdbc4bc08262cf7d3ea1ff6029ac986dd8c45"
+    },
+    {
+      "path": "research/delay3-reconstruction.md",
+      "sha256": "46ce724927361627ab2aa145f21b6cca9a39a2066630396a5e7d7f2a7637f8fe"
+    },
+    {
+      "path": "tests/test_delay3_reconstruction.py",
+      "sha256": "dddb9470080e8e6f9870cba92689f94607b6621f256b251c16ae16cd4ab15c09"
+    }
+  ],
+  "raw_rom_bytes_included": false
+}

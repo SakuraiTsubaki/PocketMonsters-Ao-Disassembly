@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "game": "Pocket Monsters Ao",
+  "function": "IsInArray",
+  "origin_reference": "ao-jp-rev0",
+  "release_count": 6,
+  "generator": {
+    "repository": "SakuraiTsubaki/Disassembly",
+    "tool": "tools/catalog_gen1_is_in_array.py",
+    "tool_sha256": "cd31391b5203daa83fe09cc01fa8e6dfcd27abb838d1dd514060f8e24605f704",
+    "dependency": {
+      "tool": "tools/catalog_gen1_fill_memory.py",
+      "sha256": "be4e6c8d4c53efe135240cb7efa749ba10f0158e68750e4d209c438f3b00bd7d"
+    }
+  },
+  "outputs": [
+    {
+      "path": "research/releases.csv",
+      "sha256": "de00a4f3c45edbd5310645201f4b04bdcdc71c3c4d843767df400a6e419b599b"
+    },
+    {
+      "path": "src/is_in_array.asm",
+      "sha256": "babfc1026dcce9bac102586effcbfd04fa3dacbdf24977f1aa93e5aa95245486"
+    },
+    {
+      "path": "analysis/is-in-array-summary.json",
+      "sha256": "93da67aecbed0b82152178995dbfee045249e250f5c253af1143bf405c8ceb76"
+    },
+    {
+      "path": "analysis/ao-jp-rev0-is-in-array.json",
+      "sha256": "0fcf401a80222f9351416860efb2c1d7b88d72595eba3e4b285ff52035e1ba06"
+    },
+    {
+      "path": "analysis/blue-en-rev0-is-in-array.json",
+      "sha256": "0249bcb672cf57af70502f2f6351a9e1688367b03abb9822d4a258d6b1256d02"
+    },
+    {
+      "path": "analysis/blue-de-rev0-is-in-array.json",
+      "sha256": "52840625a02e670f63613e5a540aec40bc71ab35eaa309c8fd726dd54f39d3e0"
+    },
+    {
+      "path": "analysis/blue-fr-rev0-is-in-array.json",
+      "sha256": "4c30aa94bbaeca081ae0f3bc582065244e3383a9d7fdb482eb4dec2980eb4460"
+    },
+    {
+      "path": "analysis/blue-it-rev0-is-in-array.json",
+      "sha256": "6f8e0c64d0ba8666cd5e33f22b9356de2749ff3ee9556635488afa022f1411b3"
+    },
+    {
+      "path": "analysis/blue-es-rev0-is-in-array.json",
+      "sha256": "0fe605ed1374fd2154395c544194a890d4e1f3043773b124554a48025c6caf06"
+    },
+    {
+      "path": "research/is-in-array-reconstruction.md",
+      "sha256": "45da1b816705ebab2a05c54ea2baab98b7b7955b46e7981c65ae5d6bcb40f270"
+    },
+    {
+      "path": "tests/test_is_in_array_reconstruction.py",
+      "sha256": "105bd88aaad02e430579532b88ae9108f4e98fc2ba646d2aa27b85408d26c68b"
+    }
+  ],
+  "raw_rom_bytes_included": false
+}

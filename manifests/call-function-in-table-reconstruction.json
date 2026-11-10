@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "game": "Pocket Monsters Ao",
+  "function": "CallFunctionInTable",
+  "origin_reference": "ao-jp-rev0",
+  "release_count": 6,
+  "generator": {
+    "repository": "SakuraiTsubaki/Disassembly",
+    "tool": "tools/catalog_gen1_call_function_in_table.py",
+    "tool_sha256": "d8cc618263234ef5a752bcfb576feefae31a7570d2c043a2b471fa2a257565e1",
+    "dependency": {
+      "tool": "tools/catalog_gen1_is_in_array.py",
+      "sha256": "cd31391b5203daa83fe09cc01fa8e6dfcd27abb838d1dd514060f8e24605f704"
+    }
+  },
+  "outputs": [
+    {
+      "path": "research/releases.csv",
+      "sha256": "de00a4f3c45edbd5310645201f4b04bdcdc71c3c4d843767df400a6e419b599b"
+    },
+    {
+      "path": "src/call_function_in_table.asm",
+      "sha256": "1f50a793da0500e1fb15c277b13f3995660905d1e14a44db7e8eacd826d4f6e5"
+    },
+    {
+      "path": "analysis/call-function-in-table-summary.json",
+      "sha256": "6fdf3bfc3c9aba6b922fb8115a7b90098c9830839530fd1cc439b70208804858"
+    },
+    {
+      "path": "analysis/ao-jp-rev0-call-function-in-table.json",
+      "sha256": "1908f95f45d4a951b1831cded7006c0f5c82d668c2d50f1a7a623181019ae1e9"
+    },
+    {
+      "path": "analysis/blue-en-rev0-call-function-in-table.json",
+      "sha256": "a05e5c075d904f23768ef6b940c7288bb5013d55bc648129d312464970393999"
+    },
+    {
+      "path": "analysis/blue-de-rev0-call-function-in-table.json",
+      "sha256": "3ea88405a574fa56a5d4afb32e4c6a6ede391a294ec7543aa1557ccba5ddf5ef"
+    },
+    {
+      "path": "analysis/blue-fr-rev0-call-function-in-table.json",
+      "sha256": "6d5c123fc974fb62ab42af7befb4ab106525f2a940c0cb07ccb66bbc68fb2f5d"
+    },
+    {
+      "path": "analysis/blue-it-rev0-call-function-in-table.json",
+      "sha256": "b89ad351d490968ad33ff58394d8a2d592b6ba1883798c5949f6fb1ecf7e729e"
+    },
+    {
+      "path": "analysis/blue-es-rev0-call-function-in-table.json",
+      "sha256": "cd0e0e51607ede3e530a33897903e381eced7c13b7f9dfc95bc6cd85191f211f"
+    },
+    {
+      "path": "research/call-function-in-table-reconstruction.md",
+      "sha256": "a7f4997c6aef097c5d8137c2a804e0e12a8efc2b02d19229e1f7a3634d6cbf5d"
+    },
+    {
+      "path": "tests/test_call_function_in_table_reconstruction.py",
+      "sha256": "7fd46b4ab6c2a57ea7b7065aca9fff6d56b12897aca57f569725b31a62a4d253"
+    }
+  ],
+  "raw_rom_bytes_included": false
+}

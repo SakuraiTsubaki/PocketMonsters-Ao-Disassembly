@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "game": "Pocket Monsters Ao",
+  "function": "CallFunctionInTable",
+  "origin_reference": "ao-jp-rev0",
+  "release_count": 6,
+  "source": "src/call_function_in_table.asm",
+  "releases": [
+    {
+      "id": "ao-jp-rev0",
+      "language": "Japanese",
+      "revision": 0,
+      "status": "candidate",
+      "sha256": "71a70e5f77c109177d21c998310ffe01a68e8cd2f41e72e7129093b890c7d3d1",
+      "origin_reference": true,
+      "address": "0x3DDB",
+      "return_address": "0x3DEB",
+      "code_sha256": "8aa23e392e79fec20c7f3332fbacb1722a9578b837e9cd11733239735f2ded6d",
+      "evidence": "analysis/ao-jp-rev0-call-function-in-table.json"
+    },
+    {
+      "id": "blue-en-rev0",
+      "language": "English",
+      "revision": 0,
+      "status": "candidate",
+      "sha256": "2a951313c2640e8c2cb21f25d1db019ae6245d9c7121f754fa61afd7bee6452d",
+      "origin_reference": false,
+      "address": "0x3D97",
+      "return_address": "0x3DA7",
+      "code_sha256": "dbf54cefc861f96374530b0df06a62ab54ed78ecd2da77dcbfb1e7a222423746",
+      "evidence": "analysis/blue-en-rev0-call-function-in-table.json"
+    },
+    {
+      "id": "blue-de-rev0",
+      "language": "German",
+      "revision": 0,
+      "status": "candidate",
+      "sha256": "2cfec2223090dc9f544aa36c99c48801be5018757a1366b88d8f40739541458e",
+      "origin_reference": false,
+      "address": "0x3DB1",
+      "return_address": "0x3DC1",
+      "code_sha256": "81e7d4134c53f008efc1bde50fae81921e71925d15a820a5f9ce8d8fc182739e",
+      "evidence": "analysis/blue-de-rev0-call-function-in-table.json"
+    },
+    {
+      "id": "blue-fr-rev0",
+      "language": "French",
+      "revision": 0,
+      "status": "candidate",
+      "sha256": "73dee67befed0c39cd0a6ed53a98ff5b98b3bddc3e7a0dae1d982776a4d0889b",
+      "origin_reference": false,
+      "address": "0x3DB4",
+      "return_address": "0x3DC4",
+      "code_sha256": "824424b8c0f215d04cf1a63d9a20126ac4fbaf5e6da870ed2af28982c8be64c3",
+      "evidence": "analysis/blue-fr-rev0-call-function-in-table.json"
+    },
+    {
+      "id": "blue-it-rev0",
+      "language": "Italian",
+      "revision": 0,
+      "status": "candidate",
+      "sha256": "e197c7535135a516fe9bf92cf7821c9f72926bf90fce3a2a5742d1b0b6a0564b",
+      "origin_reference": false,
+      "address": "0x3DAF",
+      "return_address": "0x3DBF",
+      "code_sha256": "bc4d28b9d2e464c91615ee1fd44138f6eadb3f4f0566dd97a6fc60e8958081df",
+      "evidence": "analysis/blue-it-rev0-call-function-in-table.json"
+    },
+    {
+      "id": "blue-es-rev0",
+      "language": "Spanish",
+      "revision": 0,
+      "status": "candidate",
+      "sha256": "31317f74fed2935dfc5fbb6ada766cf8515949c85c6c6e8d32d0f752b85b8f9e",
+      "origin_reference": false,
+      "address": "0x3DB6",
+      "return_address": "0x3DC6",
+      "code_sha256": "a88b5c81fa6594e3ebeef55c4a42f2c5b08dce436ebef5159abc6b57424e2bea",
+      "evidence": "analysis/blue-es-rev0-call-function-in-table.json"
+    }
+  ],
+  "raw_rom_bytes_included": false
+}
